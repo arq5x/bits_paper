@@ -15,9 +15,10 @@
 
 	\author[Sample \textit{et~al}]
 	{Ryan M. Layer$^1$, 
-	Aaron Quinlan$^2$\footnote{to whom correspondence should be addressed},
+	Kevin Skadron\,$^1$,
 	Gabriel Robins$^1$, 
-	and Kevin Skadron\,$^1$}
+	and
+	Aaron Quinlan$^2$\footnote{to whom correspondence should be addressed}}
 	\address{$^{1}$Department of Computer Science, University of Virginia,
 	Charlottesville, VA\\
 	$^{2}$Department of Public Health Sciences and Center for Public Health
@@ -330,6 +331,74 @@
 		\caption{Single interval intersection counter}
 	\end{algorithm}
 
+	The core function in our algorithm 
+	$\textsc{ICount}(B_S,B_E,a_i) = |\mathcal{I}(B,a_i)|$ determines the number of
+	intervals in the database $B$ that intersect query interval $a_i$.  As shown in
+	Figure~\ref{fig:bits}, $B$ is split into two integer lists 
+	$B_S = [b_1.start, b_2.start, \dots, b_M.start]$ and 
+	$B_E = [b_1.end, b_2.end, \dots, b_M.end]$, then $B_S$ and $B_E$ are sorted
+	numerically.  Next, two binary searches are performed,
+	$first=\textsc{ BSearch}(B_S, a_i.end)$ and 
+	$last=\textsc{ BSearch}(B_E,
+	a_i.start)$.  Since $B_S$ is a sorted list of each interval start coordinate in
+	$B$, the elements greater than or equal to $first$ in $B_S$ correspond to the
+	set of intervals in $B$ that start after $a_i$ ends.  Similarly, the elements
+	less than or equal to $last$ in $B_E$ correspond to the set of intervals in $B$
+	that end before $a_i$ starts.  From these two values, we can infer the size of
+	the set $\mathcal{I}(B,a_i)$:
+	\begin{equation*}
+		\begin{split}
+			|B|-first=&|\mathcal{G}(B,a_i)| \\
+			last=&|\mathcal{L}(B,a_i)| \\ 
+			|B|-(last+(|B|-first))=&|\mathcal{I}(B,a_i)|
+		\end{split}
+	\end{equation*}
+
+	This problem cannot be solved with a single sorted list because
+	contained intervals prevent the total ordering of $B$.  If $B$ is
+	sorted by interval start coordinates, then the interval end
+	coordinates may be unordered and $last$ can not be found
+	efficiently.  Similarly, if $B$ is sorted by interval end,
+	$first$ can not be found efficiently.  With the subroutine
+	$\textsc{ICount}(B_S,B_E,a_i)$ thus defined, the four interval set intersection
+	problem variants can now be solved:
+
+	\begin{enumerate}
+
+		\item
+		{\em Decision problem:} Let $c$ be an accumulator variable that is
+		initialized to zero; then for each $a_i \in A$, accumulate $c = c +
+		\textsc{ICount}(B_S,B_E,a_i)$.  If $c\ne0$ then return {\em yes}, otherwise
+		return {\em no}.
+
+		\item
+		{\em Counting problem:}  Let $c$ be an accumulator variable that is
+		initialized to zero; then for each $a_i \in A$, accumulate $c = c +
+		\textsc{ICount}(B_S,B_E,a_i)$.  The total accumulated count $c$ is 
+		returned (\textbf{Algorithm 2}).
+
+		\item
+		{\em Per-interval counting problem:} Let $C$ be an accumulator
+		array where element $C[i]$ corresponds to the number of
+		intersection for each element in $a_i\in A$.  Fore each $a_i \in A$,
+		set $C[i]=\textsc{ICount}(B_S,B_E,a_i)$.  The total list of counts $C$ is then
+		returned (\textbf{Algorithm 3}).
+
+		\item
+		{\em Enumeration problem:}
+		First find the per-interval counting array $C=\textsc{PerIntervalCounter}(A,B)$
+		then the let $R$ be the prefix sum of $C$. The array $R$ is used to track the
+		number of intervals that must be found in each of the subsequent scans.  Let
+		$start = 0$ track the number of enumerated intersections.
+		For $i=1\dots|A|$, let $end = R[i]$ where $end - start$ is the nubmer intervals
+		in $B$ that intersect $a_i$.  Let $from=\textsc{BSearch}(B_S, a_i.end)$ be
+		the initial position of the scan.  While $end - start > 0$ some number of
+		intervals in $B$ must be scanned for an intersection with $a_i$.  If $a_i$
+		intersections $b_from$ then let $E[start] = <a_i, b_from>$ and 
+		$start=start+1$.  Then let $from = from +1$.  Finallty the total set of
+		intersecting intervals $E$ is returned (\textbf{Algorithm 4}).
+	\end{enumerate}
+	
 	\begin{algorithm}[h]
 		\DontPrintSemicolon
 		\footnotesize
@@ -404,74 +473,6 @@
 		\caption{Intersection enumerator}
 	\end{algorithm}
 
-
-	The core function in our algorithm 
-	$\textsc{ICount}(B_S,B_E,a_i) = |\mathcal{I}(B,a_i)|$ determines the number of
-	intervals in the database $B$ that intersect query interval $a_i$.  As shown in
-	Figure~\ref{fig:bits}, $B$ is split into two integer lists 
-	$B_S = [b_1.start, b_2.start, \dots, b_M.start]$ and 
-	$B_E = [b_1.end, b_2.end, \dots, b_M.end]$, then $B_S$ and $B_E$ are sorted
-	numerically.  Next, two binary searches are performed,
-	$first=\textsc{ BSearch}(B_S, a_i.end)$ and 
-	$last=\textsc{ BSearch}(B_E,
-	a_i.start)$.  Since $B_S$ is a sorted list of each interval start coordinate in
-	$B$, the elements greater than or equal to $first$ in $B_S$ correspond to the
-	set of intervals in $B$ that start after $a_i$ ends.  Similarly, the elements
-	less than or equal to $last$ in $B_E$ correspond to the set of intervals in $B$
-	that end before $a_i$ starts.  From these two values, we can infer the size of
-	the set $\mathcal{I}(B,a_i)$:
-	\begin{equation*}
-		\begin{split}
-			|B|-first=&|\mathcal{G}(B,a_i)| \\
-			last=&|\mathcal{L}(B,a_i)| \\ 
-			|B|-(last+(|B|-first))=&|\mathcal{I}(B,a_i)|
-		\end{split}
-	\end{equation*}
-
-	This problem cannot be solved with a single sorted list because
-	contained intervals prevent the total ordering of $B$.  If $B$ is
-	sorted by interval start coordinates, then the interval end
-	coordinates may be unordered and $last$ can not be found
-	efficiently.  Similarly, if $B$ is sorted by interval end,
-	$first$ can not be found efficiently.  With the subroutine
-	$\textsc{ICount}(B_S,B_E,a_i)$ thus defined, the four interval set intersection
-	problem variants can now be solved:
-
-	\begin{enumerate}
-
-		\item
-		{\em Decision problem:} Let $c$ be an accumulator variable that is
-		initialized to zero; then for each $a_i \in A$, accumulate $c = c +
-		\textsc{ICount}(B_S,B_E,a_i)$.  If $c\ne0$ then return {\em yes}, otherwise
-		return {\em no}.
-
-		\item
-		{\em Counting problem:}  Let $c$ be an accumulator variable that is
-		initialized to zero; then for each $a_i \in A$, accumulate $c = c +
-		\textsc{ICount}(B_S,B_E,a_i)$.  The total accumulated count $c$ is returned.
-
-		\item
-		{\em Per-interval counting problem:} Let $C$ be an accumulator
-		array where element $C[i]$ corresponds to the number of
-		intersection for each element in $a_i\in A$.  Fore each $a_i \in A$,
-		set $C[i]=\textsc{ICount}(B_S,B_E,a_i)$.  The total list of counts $C$ is then
-		returned.
-
-		\item
-		{\em Enumeration problem:}
-		First find the per-interval counting array $C=\textsc{PerIntervalCounter}(A,B)$
-		then the let $R$ be the prefix sum of $C$. The array $R$ is used to track the
-		number of intervals that must be found in each of the subsequent scans.  Let
-		$start = 0$ track the number of enumerated intersections.
-		For $i=1\dots|A|$, let $end = R[i]$ where $end - start$ is the nubmer intervals
-		in $B$ that intersect $a_i$.  Let $from=\textsc{BSearch}(B_S, a_i.end)$ be
-		the initial position of the scan.  While $end - start > 0$ some number of
-		intervals in $B$ must be scanned for an intersection with $a_i$.  If $a_i$
-		intersections $b_from$ then let $E[start] = <a_i, b_from>$ and 
-		$start=start+1$.  Then let $from = from +1$.  Finallty the total set of
-		intrsecting intervals $E$ is returned.
-	\end{enumerate}
-
 	\subsection{Time Complexity Analysis}
 
 	To compute $\textsc{ICount}(B_S,B_E,a_i)$ for each $a_i$ in $A$, the interval
@@ -482,7 +483,6 @@
 	results of all $\textsc{ICount}(B_S,B_E,a_i)$ instances into a final result can
 	be accomplished in $O(N)$ time.  The total complexity of the counting
 	problems is therefore $O((|A| + |B|) \log |B|)$.
-
 	The enumeration problem requires additional steps to scan the
 	intervals in $B_S$.  In the best case scenario, each scan requires
 	$\textsc{ICount}(B_S,B_E,a_i)$ extra steps, to a total of $O(|B| \log |B|

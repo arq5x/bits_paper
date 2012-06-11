@@ -1,0 +1,89 @@
+\begin{thebibliography}{}
+
+\bibitem[Alekseyenko and Lee(2007)Alekseyenko and Lee]{alekseyenko2007}
+Alekseyenko, A.~V. and Lee, C.~J. (2007).
+\newblock Nested containment list ({NCList}): a new algorithm for accelerating
+  interval query of genome alignment and interval databases.
+\newblock {\em Bioinformatics\/}, {\bf 23}(11), 1386--1393.
+
+\bibitem[Giardine {\em et~al.}(2005)Giardine, Riemer, Hardison, Burhans, L,
+  Shah, Zhang, Blankenberg, Albert, Taylor, Miller, Kent, and
+  Nekrutenko]{giardine2005}
+Giardine, B., Riemer, C., Hardison, R.~C., Burhans, R., L, L.~E., Shah, P.,
+  Zhang, Y., Blankenberg, D., Albert, I., Taylor, J., Miller, W., Kent, W.~J.,
+  and Nekrutenko, A. (2005).
+\newblock Galaxy: a platform for interactive large-scale genome analysis.
+\newblock {\em Genome Research\/}, {\bf 15}(10), 1451--1455.
+
+\bibitem[Goodrich {\em et~al.}(1993)Goodrich, Tsay, Vengroff, and
+  Vitter]{goodrich1993}
+Goodrich, M.~T., Tsay, J.-J., Vengroff, D.~E., and Vitter, J.~S. (1993).
+\newblock External-memory computational geometry.
+\newblock In {\em Proceedings of the 1993 {IEEE} 34th Annual Foundations of
+  Computer Science\/}, pages 714--723, Washington, DC, USA. IEEE Computer
+  Society.
+
+\bibitem[Kent {\em et~al.}(2002)Kent, Sugnet, Furey, Roskin, Pringle, Zahler,
+  and Haussler]{kent2002}
+Kent, W.~J., Sugnet, C.~W., Furey, T.~S., Roskin, K.~M., Pringle, T.~H.,
+  Zahler, A.~M., and Haussler, A.~D. (2002).
+\newblock The human genome browser at {UCSC}.
+\newblock {\em Genome Research\/}, {\bf 12}(6), 996--1006.
+
+\bibitem[Kriegel {\em et~al.}(1992)Kriegel, Brinkhoff, and
+  Schneider]{kriegel1991}
+Kriegel, H.-P., Brinkhoff, T., and Schneider, R. (1992).
+\newblock The combination of spatial access methods and computational geometry
+  in geographic database systems.
+\newblock In {\em Data Structures and Efficient Algorithms, Final Report on the
+  {DFG} Special Joint Initiative\/}, pages 70--86, London, UK. Springer-Verlag.
+
+\bibitem[Li {\em et~al.}(2009)Li, Handsaker, Wysoker, Fennell, Ruan, Homer,
+  Marth, Abecasis, Durbin, and Subgroup]{li2009}
+Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth,
+  G., Abecasis, G., Durbin, R., and Subgroup, . G. P. D.~P. (2009).
+\newblock The sequence alignment/map {(SAM)} format and samtools.
+\newblock {\em Bioinformatics\/}, {\bf 25}, 2078--2049.
+
+\bibitem[McKenna {\em et~al.}(2010)McKenna, Hanna, Banks, Sivachenko,
+  Cibulskis, Kernytsky, Garimella, Altshuler, Gabriel, Daly, and
+  DePristo]{mckenna2010}
+McKenna, A., Hanna, M., Banks, E., Sivachenko, A., Cibulskis, K., Kernytsky,
+  A., Garimella, K., Altshuler, D., Gabriel, S., Daly, M., and DePristo, M.~A.
+  (2010).
+\newblock The genome analysis toolkit: a mapreduce framework for analyzing
+  next-generation dna sequencing data.
+\newblock {\em Genome Research\/}, {\bf 20}(9), 1297--1303.
+
+\bibitem[McKenney and McGuire(2009)McKenney and McGuire]{mckenney2009}
+McKenney, M. and McGuire, T. (2009).
+\newblock A parallel plane sweep algorithm for multi-core systems.
+\newblock In {\em Proceedings of the 17th ACM SIGSPATIAL International
+  Conference on Advances in Geographic Information Systems\/}, GIS '09, pages
+  392--395, New York, NY, USA. ACM.
+
+\bibitem[Merrill and Grimshaw(2011)Merrill and Grimshaw]{merrill2011}
+Merrill, D. and Grimshaw, A. (2011).
+\newblock High performance and scalable radix sorting: a case study of
+  implementing dynamic parallelism for {GPU} computing.
+\newblock {\em Parallel Processing Letters\/}, {\bf 21}(3), 245--272.
+
+\bibitem[Quinlan and Hall(2011)Quinlan and Hall]{quinlan2010}
+Quinlan, A.~R. and Hall, I.~M. (2011).
+\newblock {BEDTools}: a flexible suite of utilities for comparing genomic
+  features.
+\newblock {\em Bioinformatics\/}, {\bf 26}(6), 841--842.
+
+\bibitem[Richardson(2006)Richardson]{richardson2006}
+Richardson, J.~E. (2006).
+\newblock Fjoin: simple and efficient computation of feature overlaps.
+\newblock {\em Journal of Computational Biology\/}, {\bf 13}, 1457--1464.
+
+\bibitem[Robinson {\em et~al.}(2011)Robinson, Thorvaldsdóttir, Winckler,
+  Guttman, Lander, Getz, and Mesirov]{robinson2011}
+Robinson, J.~T., Thorvaldsdóttir, H., Winckler, W., Guttman, M., Lander,
+  E.~S., Getz, G., and Mesirov, J.~P. (2011).
+\newblock Integrative genomics viewer.
+\newblock {\em Nature Biotechnology\/}, {\bf 29}, 24--26.
+
+\end{thebibliography}

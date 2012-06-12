@@ -11,7 +11,7 @@
 
 	\title[Optimal Interval Intersection Counting]{
 	Binary Interval Search (BITS):  \\
-	An Optimal Algorithm for Interval Intersection Counting}
+	A Scalable Algorithm for Interval Intersection Counting}
 
 	\author[Sample \textit{et~al}]
 	{Ryan M. Layer$^1$, 
@@ -22,7 +22,7 @@
 	\address{$^{1}$Department of Computer Science, University of Virginia,
 	Charlottesville, VA\\
 	$^{2}$Department of Public Health Sciences and Center for Public Health
-	Genomics, Univeristy of Virginia, Charlottesville, VA}
+	Genomics, University of Virginia, Charlottesville, VA}
 
 	\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
 
@@ -62,91 +62,48 @@
 
 	\section{Introduction}
 
-	Searches for intersecting intervals in multiple sets of genomic features are
-	crucial to nearly all genomic analyses. For example, intersection is used to
-	compare ChIP enrichment between experiments and cell types, identify potential
+	Searching for intersecting intervals in multiple sets of genomic features is
+	crucial to nearly all genomic analyses. For example, interval intersection is used
+	to compare ChIP enrichment between experiments and cell types, identify potential
 	regulatory targets, and compare genetic variation among many individuals.
-	Interval intersection is the central operation in a broader class of
+	Interval intersection is the fundamental operation in a broader class of
 	``genome arithmetic'' techniques, and, as such, intersection underlies the
 	functionality found in genome browsers~\citep{kent2002,robinson2011} and popular
 	analysis software such as SAMTOOLS~\citep{li2009}, BEDTOOLS~\citep{quinlan2010}, 
 	GATK~\citep{mckenna2010}, and GALAXY~\citep{giardine2005}.
 
-	Given the importance of interval set intersection to genomic discovery, many
-	sequential algorithms have been developed based on trees,
-	NCLists~\citep{alekseyenko2007}, or linear sweeps of pre-sorted
-	intervals~\citep{richardson2006}. For example, the UCSC genome browser
-	introduced a clever scheme based on R-trees that places intervals from one
-	dataset into hierarchical ``bins''~\citep{kent2002}.  Intervals from a second
-	dataset are then compared to matching bins in order to narrow the search for
-	intersections to a focused portion of the genome.  While this popular approach
-	is used by the Kent tools software, BEDTools~\citep{quinlan2010}, SAMTOOLS, and
-	TABIX, the underlying tree structure demands substantial memory for large
-	datasets and is often difficult to parallelize. As an alternative,
-	memory-efficient approach, recent versions of BEDTools and other software
-	conduct a linear ``sweep'' through pre-sorted datasets while maintaining a
-	priority heap to track intersections as they are encountered. While the
-	complexity of such sequential sweep algorithms can be shown to be theoretically
-	optimal, they are nonetheless difficult to scale to parallel architectures.
-
-	As the throughput of massively parallel DNA sequencing continues to increase,
-	the limitations of these traditional approaches to interval intersection become
-	increasingly acute. Traditional techniques for measuring gene expression (e.g.,
-	microarrays) and chromatin states (e.g., ChIP-chip) are being supplanted by
-	sequencing-based techniques (RNA-seq and ChIP-seq, respectively), and
-	whole-exome and whole-genome experiments are now routine. Consequently, typical
+	As high throughput sequencing technologies have quickly become the \emph{de facto}
+	molecular tool for genome biology, the need for efficient approaches 
+	to interval intersection has become increasingly acute. Traditional techniques 
+	for measuring gene expression (e.g.,microarrays) and chromatin states (e.g., ChIP-chip) 
+	are being supplanted by sequencing-based techniques (RNA-seq and ChIP-seq, respectively), and
+	whole-exome and whole-genome experiments are now routine. Consequently, most
 	genomics labs now conduct analyses including datasets with millions, if not billions 
-	of intervals. Experiments of this size require substantial computation time per 
+	of genome intervals. Experiments of this size require substantial computation time per 
 	pair-wise comparison, and a typical analysis requires comparisons to many large
-	sets of genomic features. As extant sequential solutions scale poorly 
-	and are already reaching their theoretical performance limits, it is clear that 
-	parallel approaches must be developed to allow discovery to keep pace with the
-	scale and complexity of modern datasets.
+	sets of genomic features. Existing toolsets for interval intersection scale poorly 
+	and are already reaching their theoretical performance limits. We therefore argue the
+	need for scalable new algorithms for this fundamental tool in genomic research
+	in order to allow discovery to keep pace with the scale and complexity of modern datasets.
 
-	The current generation of Graphics Processing Units (GPUs), such as NVIDA's
-	CUDA, can improve performance for the subset of problems that map well to the
-	massively parallel single instruction, multiple data (SIMD) architecture.  These
-	architectures deploy hundreds of basic parallel processing units, and can
-	support thousands of concurrently executing threads.  In order to fully utilize
-	the hardware, a problem must be decomposed into many small subtasks.   Problems
-	that do not fit this model are less likely to dramatically benefit from GPU
-	hardware.
-
-	Neither the linear sweep algorithm nor the existing search algorithms are good
-	candidates for the GPU architecture.  Parallel sweep algorithms have been
-	proposed~\citep{goodrich1993, kriegel1991, mckenney2009} for segment
-	intersection (a generalization of interval intersection), but they depend on a
-	partitioned input space scheme that can exploit only limited parallelism.
-	Search algorithms, where one set is a list of interval queries and the other set
-	is an interval database, can leverage a higher degree of parallelism by
-	performing searches concurrently.  However, the database generation can be even
-	slower than the searching itself, and may be difficult to parallelize. 
-	\textbf{TODO: this feels a bit weak}
-
-	In this manuscript we introduce the Binary Interval Search (BITS) algorithm 
+	In this manuscript, we introduce the Binary Interval Search (BITS) algorithm 
 	as a new and scalable solution to the fundamental problem of interval set 
-	intersection.  Our algorithm is optimal in the sequential case, avoids slow 
-	linear sweeps, does not require \emph{ad hoc} data structures, and maps well 
-	to parallel architectures.  The BITS algorithm is based on the novel 
-	observation that the size of the intersection between two sets can be directly 
-	computed without the need to enumerate each intersection. For each interval 
-	in the query list, two binary searches are performed to determine the number 
-	of intervals in the database that intersect the query interval.  Each pair of searches 
-	is independent, and thus all the searches can be performed in parallel.  This type of 
-	algorithm is perfectly suited to GPU-type architectures that are optimized 
-	for large numbers of threads.
-
-	Our analysis shows that the parallel BITS algorithm, when applied to a GPU
-	architecture, can provide substantial (over 75X) speedups over other widely-used
-	sequential interval intersection approaches. These results are particularly
-	promising for applications that require large numbers of intersection
-	operations, such as database searches and Monte Carlo simulations.
+	intersection.  We demonstrate that our algorithm is optimal in the sequential case, 
+	that it does not require \emph{ad hoc} data structures, and most importantly, that it 
+	is well-suited to parallel architectures. We demonstrate that our algorithm performs
+	similarly to traditional algorithms, yet has clear benefits for larger datasets and 
+	for common (e.g., exome sequencing, RNAseq, and ChIPseq) genomic application. Moreover,
+	we demonstrate that the simplicity of the BITS algorithm facilitates parallel
+	implementations, yielding substantial speed increases over existing sequential tools.
+	As such the BITS algorithm is particularly promising for applications requiring 
+	large numbers of intersection operations, such as massive database searches and 
+	Monte Carlo simulations.
 
 
 	\subsection{The Interval Set Intersection problem}
-	Before we describe our parallel set intersection algorithm, we review some basic
-	definitions.  A genomic interval is a single continuous stretch of a genome with
-	a start and end location (e.g., a gene), and a genomic interval set is a
+	Before we describe our new approach to interval intersection, we begin by reviewing
+	some basic definitions.  A genomic \emph{interval} is a single continuous stretch of a genome 
+	with a chromosomal start and end location (e.g., a gene), and a genomic \emph{interval set} is a
 	collection of genomic intervals (e.g., all known genes).  More generally, an
 	interval is the set of all numbers between a start value and an end value, that
 	can be represented as the pair $(a.start, a.end)$.  Two intervals $a$ and $b$
@@ -170,47 +127,18 @@
 	in order of increasing generality and complexity.
 	\begin{enumerate}
 		\item The {\em decision problem} $\mathcal{I_D}(A,B)$:  given interval sets $A$
-		an $B$, does there exist and interval in $A$ that intersects and interval in
+		an $B$, does there exist at least one interval in $A$ that intersects an interval in
 		$B$?
 		\item The {\em counting problem} $\mathcal{I_C}(A,B)$: how many pair-wise
 		intersections exist between the intervals $A$ and $B$?
 		\item The {\em per-interval counting problem} $\mathcal{I_P}(A,B)$: how many
 		intervals in $B$ intersect each interval in $A$?
-		\item The {\em enumeration problem} $\mathcal{I}(A,B)$: what is the total set of
-		pair-wise intersection between $A$ an $B$?
+		\item The {\em enumeration problem} $\mathcal{I}(A,B)$: what is the set of
+		pair-wise interval intersections between $A$ an $B$?
 	\end{enumerate}
 
-	\subsection{Related Work}
-
-	Most interval set intersection algorithms use either a linear sweep to scan the
-	intervals in both sets, or search for intersections using a pre-computed data
-	structure.
-
-	\subsubsection{Linear Sweep Algorithms}
-
-	\textbf{TODO: cite Richardson, BEDTOOLs, BEDOPS}
-	
-	In general, the linear sweep algorithm combines intervals from $A$ and $B$ into
-	a single set $S$, and the elements in $S$ are then processed in order.  An {\em
-	active structure} tracks intervals as they enter and exit the ``context'', and
-	two intervals intersect if and only if they are in context at the same time.
-
-	To correctly track the intervals that are in context, all segment starts, ends,
-	and intersections behind the sweep must be known.  McKenny and McGuire~\citep{mckenney2009} 
-	proposed that segments be broken at the partition boundaries, which effectively 
-	resets the sweep invariant between partitions.   The broken segments are re-joined 
-	in the final result.  Although partitioning allows for some amount of parallel
-	execution, the level of parallelism that is possible in linear sweep algorithms 
-	is limited to the number of partitions that can be created, which is a function 
-	of how the segments are distributed, not the size of the segment set.
-
-	\subsubsection{Searching algorithms}
-	
-	\textbf{TODO: cite Richardson, BEDTOOLs, BEDOPS}
-	
-	An alternative to the linear sweep involves searching for intersections.  Given
-	two interval sets $A$ and $B$, $B$ is treated as a database of intervals, and
-	$A$ is utilized as set of query intervals.  For each interval $a_i \in A$, the
+	Given two interval sets $A$ and $B$, searching algorithms treat $B$ as a database of intervals, and
+	$A$ is considered as set of query intervals.  For each interval $a_i \in A$, the
 	search returns the set of intervals in $B$ that intersect $a_i$.
 
 	The correctness of the searching algorithm is complicated by a subtle detail.
@@ -224,7 +152,7 @@
 	interval that does not intersect $a_i$.  However, as shown in Figure~\ref{fig:contained} 
 	this technique is complicated by the possibility of intervals wholly {\em contained} 
 	inside other intervals.
-
+	
 	\begin{figure}[h]
 		\centering
 		\subfigure[The search for $y$ in the database returns interval $h$, which does
@@ -246,7 +174,7 @@
 		find the intersecting set size.}
 		\label{bitssearching}
 	\end{figure}
-
+	
 	An interval $b_j\in B$ is ``contained'' if there exists an interval
 	$b_k \in B$ where $b_k.start \leq b_j.start$ and $b_j.end \leq
 	b_k.end$.  Considering such intervals, if the interval found in the
@@ -258,17 +186,59 @@
 	first interval that does not intersect $a_i$; it is possible that some
 	earlier containing interval intersects $a_i$. Therefore, the scan is
 	forced to continue until it reaches the beginning of the list.
+	
 
-	Search algorithms can expose a higher degree of parallelism by
-	allowing each thread to handle one interval query, making it possible
-	for the parallelism to be proportional to input size, rather than to
-	the distribution of intervals within the input space.  This level of
-	parallelism may not be possible using existing sequential search
-	algorithms, due to their reliance on methods and secondary structures
-	that do not map well onto massively parallel architectures.
+	
+	\subsection{Related Work}
+
+	\textbf{TODO: cite Richardson, BEDTOOLs, BEDOPS}
+
+	Given the importance of interval set intersection to genomic discovery, many
+	sequential algorithms have been developed that, in general, are either based on trees,
+	NCLists~\citep{alekseyenko2007}, or linear sweeps of pre-sorted intervals~\citep{richardson2006}. The 
+	UCSC genome browser introduced a clever and now widely-used scheme based on R-trees. This binning 
+	approach places intervals from one dataset into hierarchical ``bins''~\citep{kent2002}.  
+	Intervals from a second dataset are then compared to solely to matching bins (instead of the 
+	entire dataset) in order to narrow the search for intersections to a focused portion of the genome.  
+	While this popular approach is used by the Kent tools software, BEDTools~\citep{quinlan2010}, 
+	SAMTOOLS(\textbf{TODO: cite}), and TABIX(\textbf{TODO: cite}), the underlying tree structure 
+	demands substantial memory for large datasets and is often difficult to parallelize. As an alternative,
+	memory-efficient approach, recent versions of BEDTools and other software (\textbf{TODO cite BEDOPS})
+	conduct a linear ``sweep'' through pre-sorted datasets while maintaining a
+	an auxiliary data structure to track intersections as they are encountered. The
+	complexity of such sequential sweep algorithms can be shown to be theoretically
+	optimal, yet they are nonetheless difficult to scale to parallel architectures.
+
+	% Search algorithms can expose a higher degree of parallelism by
+	% allowing each thread to handle one interval query, making it possible
+	% for the parallelism to be proportional to input size, rather than to
+	% the distribution of intervals within the input space.  This level of
+	% parallelism may not be possible using existing sequential search
+	% algorithms, due to their reliance on methods and secondary structures
+	% that do not map well onto massively parallel architectures.
+	
+	The current generation of Graphics Processing Units (GPUs), such as NVIDA's
+	CUDA, can improve performance for the subset of problems that map well to the
+	massively parallel single instruction, multiple data (SIMD) architecture.  These
+	architectures deploy hundreds of basic parallel processing units, and can
+	support thousands of concurrently executing threads.  In order to fully utilize
+	the hardware, a problem must be decomposed into many small subtasks.   Problems
+	that do not fit this model are less likely to dramatically benefit from GPU
+	hardware.
+	
+	Neither linear sweep approaches nor existing intersection searching algorithms are good
+	candidates for the GPU architecture.  Parallel sweep algorithms have been
+	proposed~\citep{goodrich1993, kriegel1991, mckenney2009} for segment
+	intersection (a generalization of interval intersection), but they depend on a
+	partitioned input space scheme that can exploit only limited parallelism.
+	Search algorithms, where one set is a list of interval queries and the other set
+	is an interval database, can leverage a higher degree of parallelism by
+	performing searches concurrently.  However, the database generation can be even
+	slower than the searching itself, and may be difficult to parallelize. 
+	\textbf{TODO: this feels a bit weak}
 
 % METHODS
-
+	
 	\section{Methods}
 	\subsection{Binary Interval Search (BITS) Algorithm}
 	We now introduce our new Binary Interval Search (BITS) algorithm for solving
@@ -279,7 +249,7 @@
 	of intervals in the database that intersect the query interval.  Each pair of
 	searches is independent of any others, and thus all searches can be
 	performed in parallel.  
-
+	
 	Our algorithm uses a different, but equivalent, definition of interval
 	intersection.  Previously, the intersecting set was defined as the set
 	of intervals in the interval database $B$ that end after the query

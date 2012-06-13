@@ -360,12 +360,12 @@
 		then the let $R$ be the prefix sum of $C$. The array $R$ is used to track the
 		number of intervals that must be found in each of the subsequent scans.  Let
 		$start = 0$ track the number of enumerated intersections.
-		For $i=1\dots|A|$, let $end = R[i]$ where $end - start$ is the nubmer intervals
+		For $i=1\dots|A|$, let $end = R[i]$ where $end - start$ is the number intervals
 		in $B$ that intersect $a_i$.  Let $from=\textsc{BSearch}(B_S, a_i.end)$ be
 		the initial position of the scan.  While $end - start > 0$ some number of
 		intervals in $B$ must be scanned for an intersection with $a_i$.  If $a_i$
 		intersections $b_from$ then let $E[start] = <a_i, b_from>$ and 
-		$start=start+1$.  Then let $from = from +1$.  Finallty the total set of
+		$start=start+1$.  Then let $from = from +1$.  Finally, the total set of
 		intersecting intervals $E$ is returned (\textbf{Algorithm 4}).
 	\end{enumerate}
 	
@@ -373,7 +373,7 @@
 		\DontPrintSemicolon
 		\footnotesize
 		\KwIn{Database intervals array $B$ and query interval array $A$}
-		\KwOut{Number of intersections $c$ betweeen $A$ and $B$}
+		\KwOut{Number of intersections $c$ between $A$ and $B$}
 		\BlankLine
 		\textbf{Function} \textsc{Counter}$(A,B)$
 		\Begin {

@@ -708,6 +708,16 @@
 	
 	As we have demonstrated, the BITS algorithm is well-suited to counting
 	interval intersections, regardless of dataset size or genomic distribution.
+	
+	\begin{enumerate}
+		\item Simple data structure - array.
+		\item Binary search - O(log(N))
+		\item these make it easily portable to parallel architectures, even 
+		      more complicated archs such as CUDA.
+		\item we implemented BITS for OpenMP and CUDA (supp. methods).
+		\item describe scaleups.
+		\item GPUs - sort, arrays, bsearch.  all things GPUs excel at.
+		
 	  
 	% Performing a single operation independently on many different inputs
 	% is a classic parallelization scenario.  When based on the subroutine
@@ -761,6 +771,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Applications for Monte-carlo simulations}
 	
+
 	
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -768,37 +779,41 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Conclusion}
 	
-	\textbf{TO DO: Rework.}
-	% We have developed a highly scalable approach to interval intersection
-	% that exploits the speed and simplicity of the binary search. Our 
-	% binary interval search (BITS) algorithm is founded upon the novel 
-	% observation that the count of overlapping intervals between two sets 
-	% can be obtained without the computational burden of enumerating each individual
-	% intersection. We illustrate that the two binary searches conducted
-	% against the database for each query interval are independent, and thus, the
-	% BITS algorithm is well suited for GPU architectures that are optimized for
-	% large numbers of concurrent threads. Our results with the CUDA architecture
-	% demonstrate speed increases of up to 143x and 508x relative to existing 
-	% approaches to genome interval intersection. Using a single CPU, we still observe
-	% improvements of 17.7x and 49.5x, illustrating the our new approach will benefit
-	% existing tools that are incapable of exploiting GPU architectures.  This
-	% substantial performance increase is especially relevant to modern genomic
-	% analyses given the staggering scale and complexity of current and future
-	% datasets.  Indeed, given that the BITS algorithm excels at \emph{counting}
-	% overlaps, it is perfectly suited to address many fundamental yet computationally
-	% intensive genomic analyses including RNA-seq transcript quantification, ChIP-seq
-	% peak detection, and searches for copy-number and structural variation.
-	% 
-	% We also note that the performance gains that BITS offers increase as the number
-	% of interval comparisons increases. Therefore, we anticipate that our approach
-	% will enable previously intractable large-scale comparisons of experimental
-	% datasets with comprehensive genome annotation databases that contain thousands
-	% of distinct genome annotation sets. Moreover, this approach is directly amenable
-	% to Monte Carlo measurements of associations between interval sets, as such
-	% simulations require thousands of iterations in order to demonstrate
-	% significance. Given the performance and simplicity of the algorithm, we
-	% anticipate that it will benefit a wide range of existing tools ranging from
-	% visualization tools to widely-used genomic analysis software.
+	We have devised a scalable new approach to interval intersection
+	that exploits the simplicity of the binary search while avoiding the complications
+	posed by nested intervals. Our binary interval search (BITS) algorithm is founded upon the novel 
+	observation that the count of overlapping intervals between two sets 
+	can inferred by using binary searches to identify intervals that \emph{cannot}
+	intersect one another. Unlike existing methods, our approach does not need
+	to enumerating each individual intersection in order to count the total number 
+	of intersections. We have demonstrated that, when implemented using a single process,
+	BITS compares favorably to existing tools and excels at intersection counting, especially
+	for very large datasets (e.g., high throughput sequencing) or datasets with biased
+	genomic distributions (e.g., ChIP-seq, exome capture, RNA-seq).
+	
+	We also show that the two binary searches conducted
+	against the database for each query interval are independent, and thus, parallelizable.
+	This property, combined with the simple data structures and search algorithms employed
+	make the BITS algorithm a perfect candidate for GPU architectures that are optimized for
+	large numbers of concurrent threads. Our results with the CUDA architecture
+	demonstrate speed increases of up to ?x and ?x relative to existing 
+	approaches to genome interval intersection. This substantial performance increase 
+	is especially relevant to modern genomic analyses given the staggering scale and complexity 
+	of current and future datasets.  Given that the BITS algorithm excels at \emph{counting}
+	overlaps, it is perfectly suited to address many fundamental yet computationally
+	intensive genomic analyses including RNA-seq transcript quantification, ChIP-seq
+	peak detection, and searches for copy-number and structural variation.
+	
+	\textbf{TO DO: Discuss MCMC.}
+	
+	\textbf{TO DO: Discuss more performant versions when data is pre-sorted.}
+
+	\textbf{TO DO: Discuss the potential for using BITS for new statistical measures.  For
+	example, the Jaccard measure in the recent PLoS CompBio paper.}
+	
+	Given the performance and simplicity of the algorithm, we
+	anticipate that it will benefit a wide range of existing tools ranging from
+	visualization tools to widely-used genomic analysis software.
 
 	\bibliographystyle{natbib}
 	%\bibliographystyle{achemnat}

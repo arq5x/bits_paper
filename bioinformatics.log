@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  11 JUN 2012 12:28
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  6 JUL 2012 11:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -297,285 +297,241 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 9.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 31.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 30.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 30.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 30.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 30.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 30.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 30.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 30.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 30.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 30.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 31.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 31.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 30.
+(Font)              size <12> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 30.
+(Font)              size <6> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 30.
+(Font)              size <12> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 30.
+(Font)              size <6> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 30.
+(Font)              size <12> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 30.
+(Font)              size <6> substituted on input line 31.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 30.
+LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 31.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 30.
+(Font)              size <5> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 30.
+(Font)              size <5> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 30.
+(Font)              size <5> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 30.
+(Font)              size <7> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 30.
+(Font)              size <7> substituted on input line 31.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 30.
+(Font)              size <7> substituted on input line 31.
 
 
-Underfull \hbox (badness 10000) detected at line 30
+Underfull \hbox (badness 10000) detected at line 31
 []
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 33.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 34.
 
-Underfull \hbox (badness 3138) in paragraph at lines 33--44
+Underfull \hbox (badness 3138) in paragraph at lines 34--45
 \OT1/phv/m/n/8 datasets is fundamental to understanding the biology of the
  []
 
 
-Underfull \hbox (badness 2478) in paragraph at lines 33--44
+Underfull \hbox (badness 2478) in paragraph at lines 34--45
 \OT1/phv/m/n/8 must explore many large datasets of genome intervals (e.g.,
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 33--44
+Underfull \hbox (badness 1540) in paragraph at lines 34--45
 \OT1/phv/m/n/8 genes, polymorphisms, and sequence alignments) in order to
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 33--44
+Underfull \hbox (badness 2261) in paragraph at lines 34--45
 \OT1/phv/m/n/8 place their experiments in a broader context and make new
  []
 
 
-Underfull \hbox (badness 2932) in paragraph at lines 33--44
+Underfull \hbox (badness 2932) in paragraph at lines 34--45
 \OT1/phv/m/n/8 discoveries. Relationships between experimental datasets and
  []
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 45--56
+Underfull \hbox (badness 1019) in paragraph at lines 46--57
 \OT1/phv/b/n/8 Results: \OT1/phv/m/n/8 Here we introduce the Binary Interval Se
 arch (BITS)
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 45--56
+Underfull \hbox (badness 2012) in paragraph at lines 46--57
 \OT1/phv/m/n/8 algorithm, a novel and scalable approach to the interval set
  []
 
 
-Underfull \hbox (badness 4279) in paragraph at lines 45--56
+Underfull \hbox (badness 4279) in paragraph at lines 46--57
 \OT1/phv/m/n/8 that the BITS algorithm is well-suited to parallel computing
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 62.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 63.
 
-Underfull \hbox (badness 5417) in paragraph at lines 64--73
-\OT1/ptm/m/n/9 intersection is used to compare ChIP enrichment between
+Underfull \hbox (badness 3229) in paragraph at lines 75--87
+[]\OT1/ptm/m/n/9 As high throughput sequencing technologies have quickly
  []
 
 
-Underfull \hbox (badness 2469) in paragraph at lines 64--73
-\OT1/ptm/m/n/9 functionality found in genome browsers (Kent \OT1/ptm/m/it/9 et 
-al.\OT1/ptm/m/n/9 , 2002;
+Underfull \hbox (badness 1052) in paragraph at lines 75--87
+\OT1/ptm/m/n/9 become the \OT1/ptm/m/it/9 de facto \OT1/ptm/m/n/9 molecular too
+l for genome biology, the
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 74--90
-\OT1/ptm/m/n/9 of pre-sorted intervals (Richardson, 2006). For example, the
+Underfull \hbox (badness 1389) in paragraph at lines 75--87
+\OT1/ptm/m/n/9 increasingly acute. Traditional techniques for measuring gene
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
+
+Package natbib Warning: Citation `(' on page 1 undefined on input line 93.
+
+
+Underfull \hbox (badness 4132) in paragraph at lines 88--107
+\OT1/ptm/m/n/9 (BITS) algorithm as a novel and scalable solution to the
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 74--90
-\OT1/ptm/m/n/9 UCSC genome browser introduced a clever scheme based on
- []
-
-
-Underfull \hbox (badness 2717) in paragraph at lines 91--104
-[]\OT1/ptm/m/n/9 As the throughput of massively parallel DNA sequencing
- []
-
-
-Underfull \hbox (badness 6876) in paragraph at lines 91--104
-\OT1/ptm/m/n/9 continues to increase, the limitations of these traditional
- []
-
-
-Underfull \hbox (badness 1400) in paragraph at lines 91--104
-\OT1/ptm/m/n/9 approaches to interval intersection become increasingly acute.
- []
-
-
-Underfull \hbox (badness 4940) in paragraph at lines 91--104
-\OT1/ptm/m/n/9 Traditional techniques for measuring gene expression (e.g.,
- []
-
-
-Underfull \hbox (badness 1102) in paragraph at lines 91--104
-\OT1/ptm/m/n/9 microarrays) and chromatin states (e.g., ChIP-chip) are being
- []
-
-
-Overfull \hbox (2.42795pt too wide) in paragraph at lines 91--104
-\OT1/ptm/m/n/9 seq, respectively), and whole-exome and whole-genome experiments
-
- []
-
-
-Underfull \hbox (badness 1077) in paragraph at lines 105--113
-\OT1/ptm/m/n/9 multiple data (SIMD) architecture. These architectures deploy
- []
-
-
-Underfull \hbox (badness 1496) in paragraph at lines 105--113
-\OT1/ptm/m/n/9 hundreds of basic parallel processing units, and can support
+Underfull \hbox (badness 2088) in paragraph at lines 88--107
+\OT1/ptm/m/n/9 for the interval intersection counting problem by a straight-
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 113.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 111.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
  [1
 
 
 
 ]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 123.
-
-Underfull \hbox (badness 1412) in paragraph at lines 114--124
-[]\OT1/ptm/m/n/9 Neither the linear sweep algorithm nor the existing search
- []
-
-
-Underfull \hbox (badness 1057) in paragraph at lines 125--137
-[]\OT1/ptm/m/n/9 In this manuscript we introduce the Binary Interval Search
- []
-
-
-Underfull \hbox (badness 4120) in paragraph at lines 174--176
+Underfull \hbox (badness 4120) in paragraph at lines 140--142
 []\OT1/ptm/m/n/9 The \OT1/ptm/m/it/9 counting problem $[]\OT1/cmr/m/n/9 (\OML/c
 mm/m/it/9 A; B\OT1/cmr/m/n/9 )$\OT1/ptm/m/n/9 : how many pair-wise
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 176--178
+Underfull \hbox (badness 1077) in paragraph at lines 142--144
 []\OT1/ptm/m/n/9 The \OT1/ptm/m/it/9 per-interval counting problem $[]\OT1/cmr/
 m/n/9 (\OML/cmm/m/it/9 A; B\OT1/cmr/m/n/9 )$\OT1/ptm/m/n/9 : how many
  []
 
 
-Underfull \hbox (badness 6220) in paragraph at lines 190--191
- \OT1/ptm/m/it/9 1.2.1 Linear Sweep Algorithms[] \OT1/ptm/b/n/9 TODO: cite Rich
-ardson,
- []
+LaTeX Warning: Reference `fig:contained' on page 2 undefined on input line 169.
 
 
-Underfull \hbox (badness 2376) in paragraph at lines 197--205
-\OT1/ptm/m/n/9 that segments be broken at the partition boundaries, which
- []
-
-
-Underfull \hbox (badness 2189) in paragraph at lines 197--205
-\OT1/ptm/m/n/9 allows for some amount of parallel execution, the level of
- []
-
-
-Overfull \hbox (14.73976pt too wide) in paragraph at lines 208--209
- \OT1/ptm/m/it/9 1.2.2 Searching algorithms[] \OT1/ptm/b/n/9 TODO: cite Richard
-son, BEDTOOLs,
- []
-
-
-Underfull \hbox (badness 2608) in paragraph at lines 210--214
-[]\OT1/ptm/m/n/9 An alternative to the linear sweep involves searching for
- []
-
-File: figures/bits1.eps Graphic file (type eps)
-<figures/bits1.eps>
-File: figures/bits2.eps Graphic file (type eps)
- <figures/bits2.eps>
+File: figures/Figure1.v2.eps Graphic file (type eps)
+<figures/Figure1.v2.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 245.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 191.
+
+Underfull \hbox (badness 1107) in paragraph at lines 225--234
+\OT1/ptm/m/n/9 interval intersections, several alternative algorithms have been
+
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Overfull \hbox (22.74045pt too wide) in paragraph at lines 225--234
+\OT1/ptm/m/n/9 developed that, in general, are either based on trees, NCLists (
+Alekseyenko
+ []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 1762) in paragraph at lines 225--234
+\OT1/ptm/m/n/9 2006). The UCSC genome browser introduced a clever and
+ []
+
+
+Underfull \hbox (badness 6047) in paragraph at lines 225--234
+\OT1/ptm/m/n/9 now widely-used scheme based on R-trees. This binning
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 225--234
+\OT1/ptm/m/n/9 then compared solely to matching bins (instead of the entire
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 225--234
+\OT1/ptm/m/n/9 dataset) in order to narrow the search for intersections to a
+ []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 260.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 234.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 260.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 234.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -590,22 +546,28 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [2]
-Underfull \hbox (badness 3386) in paragraph at lines 273--281
-\OT1/ptm/m/n/9 We now introduce our new Binary Interval Search (BITS)
+Underfull \hbox (badness 1142) in paragraph at lines 241--252
+\OT1/ptm/m/n/9 threads searching full bins will take longer to complete than
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 2671) in paragraph at lines 253--272
+[]\OT1/ptm/m/n/9 Recent versions of BEDTools and BEDOPS (\OT1/ptm/b/n/9 TODO ci
+te
+ []
 
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 1603) in paragraph at lines 253--272
+\OT1/ptm/m/n/9 input space such that each section can be swept in parallel
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 1264) in paragraph at lines 253--272
+\OT1/ptm/m/n/9 without violating the invariant, or threads must communicate
+ []
+
+
+LaTeX Warning: Reference `fig:bits' on page 3 undefined on input line 374.
 
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
@@ -616,10 +578,33 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 2189) in paragraph at lines 477--485
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 520--543
 \OT1/ptm/m/n/9 which requires $\OML/cmm/m/it/9 O\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9
  j\OML/cmm/m/it/9 B\OMS/cmsy/m/n/9 j [] j\OML/cmm/m/it/9 B\OMS/cmsy/m/n/9 j\OT1
 /cmr/m/n/9 )$ \OT1/ptm/m/n/9 time. Next, each instance of
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 520--543
+\OML/cmm/m/it/9 O\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9 j\OML/cmm/m/it/9 A\OMS/cmsy/m/
+n/9 j [] j\OML/cmm/m/it/9 B\OMS/cmsy/m/n/9 j\OT1/cmr/m/n/9 )$ \OT1/ptm/m/n/9 ti
+me. For the counting problems, combining
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 520--543
+\OT1/ptm/m/n/9 the results of all $[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 B[]; B[]; 
+a[]\OT1/cmr/m/n/9 )$ \OT1/ptm/m/n/9 instances into a final
  []
 
 
@@ -636,52 +621,65 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [4]
-Underfull \hbox (badness 1184) in paragraph at lines 504--511
-\OT1/ptm/m/n/9 subroutine $[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 B[]; B[]; a[]\OT1/
-cmr/m/n/9 )$\OT1/ptm/m/n/9 , which is independent of all
+Underfull \hbox (badness 1845) in paragraph at lines 550--556
+\OT1/ptm/m/n/9 subroutine $[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 B[]; B[]; a\OT1/cm
+r/m/n/9 )$\OT1/ptm/m/n/9 , which is independent of all
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 514--519
-\OT1/ptm/m/n/9 directive. We report performance benchmarks using OpenMP
+Underfull \hbox (badness 4556) in paragraph at lines 557--573
+\OT1/ptm/m/n/9 a single instruction multiple data (SIMD) architecture that
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 527--540
-\OT1/ptm/m/n/9 threads will cause reduced thread utilization. While there is
+Underfull \hbox (badness 1939) in paragraph at lines 596--601
+[]\OT1/ptm/m/n/9 Because of the different data structures used, the relative
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 543--553
-\OT1/ptm/m/n/9 We compared the performance of the counting, per interval
+Underfull \hbox (badness 2150) in paragraph at lines 596--601
+\OT1/ptm/m/n/9 performance of each approach may depend on the genomic
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 543--553
-\OT1/ptm/m/n/9 Hall, 2011) and Kent tools (Kent \OT1/ptm/m/it/9 et al.\OT1/ptm/
-m/n/9 , 2002). While BITS
+Overfull \hbox (14.14949pt too wide) in paragraph at lines 605--608
+\OT1/ptm/m/n/9 between exome-capture alignments and whole-genome alignments.
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 543--553
-\OT1/ptm/m/n/9 because parallel version of these packages are not available.
- []
-
-File: figures/data_distribution.eps Graphic file (type eps)
-<figures/data_distribution.eps>
-Underfull \hbox (badness 1077) in paragraph at lines 570--577
-\OT1/ptm/m/n/9 exons and human genome-wide sequencing data. Despite
+Underfull \hbox (badness 1418) in paragraph at lines 617--622
+\OT1/ptm/m/n/9 exons and exome-capture alignments. By design, exome
  []
 
 
-Underfull \hbox (badness 2020) in paragraph at lines 570--577
-\OT1/ptm/m/n/9 sequencing experiments typically produce short sequence
+Underfull \hbox (badness 7925) in paragraph at lines 625--636
+ \OT1/ptm/m/it/9 3.1.1 BITS excels at counting intersections[] \OT1/ptm/m/n/9 I
+n all three
  []
 
 
-Underfull \hbox (badness 1237) in paragraph at lines 570--577
-\OT1/ptm/m/n/9 the genome. Thus, each exon will intersect roughly the
+Underfull \hbox (badness 1590) in paragraph at lines 625--636
+\OT1/ptm/m/n/9 intersections than \OT1/ptm/m/it/9 enumerating \OT1/ptm/m/n/9 in
+tersections. This behavior is
  []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 625--636
+\OT1/ptm/m/n/9 example, ChIP-seq peak detection proceeds by counting the
+ []
+
+File: figures/genome-v-exome.eps Graphic file (type eps)
+<figures/genome-v-exome.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 644--654
+ \OT1/ptm/m/it/9 3.1.2 BITS is well-suited to large intersections and biased
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
@@ -692,30 +690,17 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [5]
-
-LaTeX Warning: Reference `count' on page 6 undefined on input line 609.
-
-
-LaTeX Warning: Reference `perintervalcount' on page 6 undefined on input line 6
-10.
-
-
-LaTeX Warning: Reference `enumerate' on page 6 undefined on input line 610.
-
-
-Underfull \hbox (badness 3792) in paragraph at lines 613--614
-[]\OT1/ptm/b/n/9 TODO: this sections is incorrect. Refocus on general
+Underfull \hbox (badness 1389) in paragraph at lines 656--663
+[]\OT1/ptm/m/n/9 Similarly, datasets such as exome-capture experiments lead
  []
 
 
-Underfull \hbox (badness 3302) in paragraph at lines 623--628
-[]\OT1/ptm/m/n/9 While BITS did have some improvement in enumeration
+Underfull \hbox (badness 3590) in paragraph at lines 656--663
+\OT1/ptm/m/n/9 to biased distributions of intervals among the UCSC bins.
  []
 
-File: figures/genome-v-exome.eps Graphic file (type eps)
-<figures/genome-v-exome.eps>
 File: figures/exons-v-genome.eps Graphic file (type eps)
- <figures/exons-v-genome.eps>
+<figures/exons-v-genome.eps>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -725,25 +710,18 @@ File: figures/exons-v-exome.eps Graphic file (type eps)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `count' on page 6 undefined on input line 647.
+Underfull \hbox (badness 2990) in paragraph at lines 779--780
+[]\OT1/ptm/m/n/9 we implemented BITS for OpenMP and CUDA (supp.
+ []
 
-
-LaTeX Warning: Reference `perintervalcount' on page 6 undefined on input line 6
-48.
-
-
-LaTeX Warning: Reference `fig:eexonfull' on page 6 undefined on input line 678.
-
-
-
-Underfull \hbox (badness 2351) in paragraph at lines 702--713
-[]\OT1/ptm/m/n/9 The fact that BITS performed better in counting than in
+File: figures/heatmap.eps Graphic file (type eps)
+<figures/heatmap.eps>
+Overfull \hbox (262.88998pt too wide) in paragraph at lines 861--862
+[][] 
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 702--713
-\OT1/ptm/m/n/9 enumeration is to be expected given BITS is based on the
- []
+LaTeX Warning: Float too large for page by 36.86235pt on input line 863.
 
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
@@ -759,28 +737,44 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [6]
-Underfull \hbox (badness 3907) in paragraph at lines 715--734
-\OT1/ptm/m/n/9 We have developed a highly scalable approach to interval
+Underfull \hbox (badness 3635) in paragraph at lines 883--895
+\OT1/ptm/m/n/9 the database for each query interval are independent, and
  []
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 735--745
-\OT1/ptm/m/n/9 genome annotation sets. Moreover, this approach is directly
+Underfull \hbox (badness 1661) in paragraph at lines 883--895
+\OT1/ptm/m/n/9 algorithm a perfect candidate for GPU architectures that are
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 883--895
+\OT1/ptm/m/n/9 peak detection, and searches for copy-number and structural
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 901--902
+[]\OT1/ptm/b/n/9 TO DO: Discuss the potential for using BITS for new
  []
 
 (./bioinformatics.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ³ in font ptmr7t!
 )
-Extra height:0.0pt when 578.78119pt
-(2)Left:578.78119pt Right:576.04636pt Output:578.78119pt
+Extra height:0.0pt when 488.28119pt
+(2)Left:488.28119pt Right:487.04636pt Output:488.28119pt
 - LAST -
 Extra skip:0.0pt
-Left:578.78119pt
-Right:576.04636pt
-Output:578.78119pt
+Left:488.28119pt
+Right:487.04636pt
+Output:488.28119pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -790,6 +784,43 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [7]
+Overfull \vbox (319.0pt too high) has occurred while \output is active []
+
+Extra height:0.0pt when 329.0pt
+
+Overfull \vbox (319.0pt too high) has occurred while \output is active []
+
+(2)Left:329.0pt Right:10.0pt Output:329.0pt
+- LAST -
+Extra skip:0.0pt
+Left:329.0pt
+Right:10.0pt
+Output:329.0pt
+
+Overfull \vbox (319.0pt too high) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[8
+
+]
+
+Package natbib Warning: There were undefined citations.
+
 (./bioinformatics.aux)
 
 LaTeX Font Warning: Size substitutions with differences
@@ -800,12 +831,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3787 strings out of 493634
- 47229 string characters out of 3143401
- 136630 words of memory out of 3000000
- 7022 multiletter control sequences out of 15000+200000
+ 3782 strings out of 493634
+ 47138 string characters out of 3143401
+ 132873 words of memory out of 3000000
+ 7018 multiletter control sequences out of 15000+200000
  32903 words of font info for 91 fonts, out of 3000000 for 9000
  835 hyphenation exceptions out of 8191
- 36i,19n,26p,368b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,19n,26p,276b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on bioinformatics.dvi (7 pages, 58800 bytes).
+Output written on bioinformatics.dvi (8 pages, 58680 bytes).

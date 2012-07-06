@@ -87,7 +87,7 @@
 
 	In this manuscript, we introduce the Binary Interval Search (BITS) algorithm as
 	a novel and scalable solution to the fundamental problem of interval set
-	intersection.  Our algorim executes in time $\Theta(N \log N)$, which can be
+	intersection.  Our algorithm executes in time $\Theta(N \log N)$, which can be
 	shown to be optimal for the interval intersection counting problem by a
 	straight-forward reduction to element uniqueness (which is known to be $\Theta(N
 	\log N)$~\cite(misra1982)).  Furthermore, BITS is well suited for parallel
@@ -187,25 +187,32 @@
 	
 	\begin{figure}[h]
 		\centering
-		\subfigure[The search for $y$ in the database returns interval $h$, which does
-		not intersect $y$.  All preceding intervals must be scanned to ensure
-		correctness.]{
-		\includegraphics[width=3in]{figures/bits1.eps}
-		\label{fig:contained}
-		}
-		\subfigure[Two lists, one sorted by start and the other by end, can be used to
-		find the size of the intersecting set without enumerating the intersecting
-		intervals.]{
-		\includegraphics[width=3in]{figures/bits2.eps}
-		\label{fig:bits}
-		}
-		\caption{Contained intervals complicate intersection searches.
-		A single list \subref{fig:contained} does not allow for
-		efficient searching because all prior intervals must be scanned for
-		correctness. Two lists \subref{fig:bits} can be used to
-		find the intersecting set size.}
+		\includegraphics[width=3in]{figures/Figure1.v2.eps}
+		\caption{TO DO.}
 		\label{bitssearching}
 	\end{figure}
+	
+	% \begin{figure}[h]
+	% 	\centering
+	% 	\subfigure[The search for $y$ in the database returns interval $h$, which does
+	% 	not intersect $y$.  All preceding intervals must be scanned to ensure
+	% 	correctness.]{
+	% 	\includegraphics[width=3in]{figures/bits1.eps}
+	% 	\label{fig:contained}
+	% 	}
+	% 	\subfigure[Two lists, one sorted by start and the other by end, can be used to
+	% 	find the size of the intersecting set without enumerating the intersecting
+	% 	intervals.]{
+	% 	\includegraphics[width=3in]{figures/bits2.eps}
+	% 	\label{fig:bits}
+	% 	}
+	% 	\caption{Contained intervals complicate intersection searches.
+	% 	A single list \subref{fig:contained} does not allow for
+	% 	efficient searching because all prior intervals must be scanned for
+	% 	correctness. Two lists \subref{fig:bits} can be used to
+	% 	find the intersecting set size.}
+	% 	\label{bitssearching}
+	% \end{figure}
 	
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -535,6 +542,36 @@
 	total of $O(|B| \log |B| + |A||B|)$ time.
 
 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% METHODS: Parallel BITS
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\subsection{Parallel BITS}
+
+	Performing a single operation independently on many different inputs
+	is a classic parallelization scenario.  When based on the subroutine
+	$\textsc{ICount}(B_S,B_E,a)$, which is independent of all
+	$\textsc{ICount}(B_S,B_E,b)$ for intervals $b$ in the query set where
+	$a \neq b$, interval set intersection can be a {\em pleasingly parallelizable}
+	problem that easily maps to a number of parallel architectures.
+
+	NVIDIA's Compute Unified Device Architecture (CUDA) is a single instruction
+	multiple data (SIMD) architecture that provides programmers a general interface
+	to a large number of parallel graphics processing units (GPUs).  The BITS
+	algorithm is especially well suited for the NVIDIA CUDA architecture for a
+	number of reasons.  First, CUDA is optimized to handle large numbers of
+	threads.  By assigning each thread one instance of
+	$\textsc{ICount}(B_S,B_E,a)$, the number of threads will be proportional to
+	the file size.  CUDA threads also execute in lock-step and any divergence
+	between threads will cause reduced thread utilization.  While there is some
+	divergence in the depth of each binary search performed by
+	$\textsc{ICount}(B_S,B_E,a)$, it has an upper bound of $O(log |B|)$.  Outside
+	of this divergence $\textsc{ICount}(B_S,B_E,a)$ is a classic SIMD operation.
+	And finally, the only data structure required for this algorithm is a sorted
+	list.  Sorting on GPU has been an active area of research for many years, and
+	current GPU sorting algorithms can sort billions of integers within
+	seconds~\cite{merrill2011}.
+	
+	
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% RESULTS
@@ -820,7 +857,10 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Applications for Monte-carlo simulations}
 	
-
+	\begin{figure}[t]
+		\includegraphics[width=7in,height=9in]{figures/heatmap.eps}
+		\caption[]{Monte-carlo measurements of genomic relationships among 161 datasets (FIXME)}
+	\end{figure}
 	
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

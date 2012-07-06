@@ -3,6 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: bioinformatics.aux
 The style file: natbib.bst
 Database file #1: bioinformatics.bib
+Warning--I didn't find a database entry for "("
 You've used 12 entries,
             2378 wiz_defined-function locations,
             611 strings with 6661 characters,
@@ -44,3 +45,4 @@ warning$ -- 0
 while$ -- 63
 width$ -- 0
 write$ -- 165
+(There was 1 warning)

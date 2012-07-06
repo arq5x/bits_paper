@@ -234,21 +234,21 @@
 	hierarchical binning data structure can also be difficult to build in some
 	parallel architectures.  For example, in NVIDIA's CUDA at least one extra passes
 	over the interval database is required to allocate the correct amount of space 
-	for eachbin.  BITS uses interger arrays, which easily map to most architectures.
+	for each bin.  BITS uses integer arrays, which easily map to most architectures.
 
 	Recent versions of BEDTools and BEDOPS (\textbf{TODO cite BEDOPS}) conduct a
 	linear ``sweep'' through pre-sorted datasets while maintaining an auxiliary
 	data structure to track intersections as they are encountered. While the
 	complexity of such sequential sweep algorithms is theoretically optimal, the 
 	amount of parallelism that exists is limited, and some overhead is required to
-	gurantee correctness.  Any linear sweep algorithm must maintain the ``sweep
+	guarantee correctness.  Any linear sweep algorithm must maintain the ``sweep
 	invariant''~\cite{mckenney2009}, which states that all segment starts, ends, 
 	and intersections behind the sweep must be known.  A parallel sweep algorithm
 	must either partition the input space such that each section can be swept in
 	parallel without violating the invariant, or threads must communicate 
-	about intervals that span paritions.  In the first case parallelism is limited
+	about intervals that span partitions.  In the first case parallelism is limited
 	to the number of partitions that can be created, and threads can diverge when 
-	the number of intervals in each partition are unballanced.  In the second case,
+	the number of intervals in each partition are unbalanced.  In the second case,
 	the communication overhead between threads prevents the algorithm from being 
 	work-effecient and can have significant performance implications.  Several
 	parallel sweep algorithms that have been proposed~\citep{goodrich1993,

@@ -85,18 +85,25 @@
 	and are already reaching their theoretical performance limits. We therefore argue the
 	need for scalable new algorithms to allow discovery to keep pace with the scale and complexity of modern datasets.
 
-	In this manuscript, we introduce the Binary Interval Search (BITS) algorithm 
-	as a novel [\textbf{LIT SEARCH!}] and scalable solution to the fundamental problem of interval set 
-	intersection.  We demonstrate that our algorithm is optimal [\textbf{DO WE REALLY DEMONSTRATE THIS?}] 
-	in the sequential case and that it employs simple data structures and searching techniques.
-	We further illustrate that BITS performs similarly to implementations of
-	traditional algorithms in the general case, yet has clear benefits for larger datasets and 
-	for common (e.g., exome sequencing, RNAseq, and ChIPseq) genomic applications. Most importantly, 
-	we show that the simplicity of our algorithm makes it well-suited to parallel architectures,
-	yielding substantial speed increases over existing sequential tools.
-	As such the BITS algorithm is a particularly promising approach for applications requiring 
-	large numbers of intersection operations, such as massive database searches and Monte Carlo 
-	measurements of significant relationships between sets of genome features.
+	In this manuscript, we introduce the Binary Interval Search (BITS) algorithm as
+	a novel and scalable solution to the fundamental problem of interval set
+	intersection.  Our algorim executes in time $\Theta(N \log N)$, which can be
+	shown to be optimal for the interval intersection counting problem by a
+	straight-forward reduction to element uniqueness (which is known to be $\Theta(N
+	\log N)$~\cite(misra1982)).  Furthermore, BITS is well suited for parallel
+	execution.  The parallel version performs the same amount of as the single
+	sequential version (there is no overhead) which means the algorithm is
+	work-effcient, and each parallel thread performs roughly the same amount of work
+	which means the algorithm has little thread divergence.  We illustrate that in
+	the sequential case BITS performs similarly to implementations of traditional
+	algorithms in the general case, yet has clear benefits for larger datasets and
+	for common (e.g., exome sequencing, RNAseq, and ChIPseq) genomic applications.
+	Most importantly, we show that the simplicity of our algorithm makes it
+	well-suited to parallel architectures, yielding substantial speed increases over
+	existing sequential tools.  As such the BITS algorithm is a particularly
+	promising approach for applications requiring large numbers of intersection
+	operations, such as massive database searches and Monte Carlo measurements of
+	significant relationships between sets of genome features.
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% INTRO: The Interval Set Intersection problem

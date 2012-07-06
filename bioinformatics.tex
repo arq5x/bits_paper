@@ -224,19 +224,37 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Limits to parallelization}
 
-	Existing approaches to interval intersection are poor candidates for parallelization. 
-	Tree-based methods such as the UCSC
-	binning algorithm utilize \emph{ad hoc} (\textbf{TODO: need a better desc. here}) data structures
-	that are inherently difficult to port to parallel architectures. Recent versions of BEDTools and 
-	BEDOPS (\textbf{TODO cite BEDOPS}) conduct a linear ``sweep'' through pre-sorted datasets while maintaining a
-	an auxiliary data structure to track intersections as they are encountered. While the
-	complexity of such sequential sweep algorithms can be shown to be theoretically
-	optimal, they are nonetheless difficult to scale to parallel architectures. Indeed, parallel sweep 
-	algorithms have been proposed~\citep{goodrich1993, kriegel1991, mckenney2009} for segment
-	intersection (a generalization of interval intersection), but they depend on a
-	partitioned input space scheme that can exploit only limited parallelism.  Recognizing the growing 
-	computational burden caused by modern genomic datasets, we sought to develop an algorithm that 
-	is well-suited to parallel computing architectures.
+	Existing approaches to interval intersection are poor candidates for
+	parallelization.  Thread divergence can be a significant problem for
+	hierarchical binning methods such as the UCSC binning algorithm.  If intervals
+	are not uniformly distributed and a small number of bins contain many intervals
+	while other bins are empty, then threads searching full bins will take longer to
+	complete than threads searching empty bins.  Since BITS does not enumerate to
+	count, interval distribution does not effect divergence.  Binning the 
+	hierarchical binning data structure can also be difficult to build in some
+	parallel architectures.  For example, in NVIDIA's CUDA at least one extra passes
+	over the interval database is required to allocate the correct amount of space 
+	for eachbin.  BITS uses interger arrays, which easily map to most architectures.
+
+	Recent versions of BEDTools and BEDOPS (\textbf{TODO cite BEDOPS}) conduct a
+	linear ``sweep'' through pre-sorted datasets while maintaining an auxiliary
+	data structure to track intersections as they are encountered. While the
+	complexity of such sequential sweep algorithms is theoretically optimal, the 
+	amount of parallelism that exists is limited, and some overhead is required to
+	gurantee correctness.  Any linear sweep algorithm must maintain the ``sweep
+	invariant''~\cite{mckenney2009}, which states that all segment starts, ends, 
+	and intersections behind the sweep must be known.  A parallel sweep algorithm
+	must either partition the input space such that each section can be swept in
+	parallel without violating the invariant, or threads must communicate 
+	about intervals that span paritions.  In the first case parallelism is limited
+	to the number of partitions that can be created, and threads can diverge when 
+	the number of intervals in each partition are unballanced.  In the second case,
+	the communication overhead between threads prevents the algorithm from being 
+	work-effecient and can have significant performance implications.  Several
+	parallel sweep algorithms that have been proposed~\citep{goodrich1993,
+	kriegel1991, mckenney2009} for segment intersection (a generalization of
+	interval intersection), but they all depend on a partitioned input space scheme
+	and have limited parallelism and increased overhead.
 
 
 	% TO DO
@@ -718,7 +736,31 @@
 		\item describe scaleups.
 		\item GPUs - sort, arrays, bsearch.  all things GPUs excel at.
 	\end{enumerate}	
-	  
+	
+	\begin{table}[h]
+	\centering
+	\begin{center}
+		\begin{tabular}{l l l l l l}
+			Arch. & Size & Total & Intersection & I/O & Speedup \\
+			\hline
+			\hline
+			OpenMP & 10K & 102,769 & 26.7\% & 73.4\% & 1.85 \\
+			OpenMP & 100K & 129,344 & 29.4\% & 70.6\% & 1.90 \\
+			OpenMP & 1M & 391,332 & 36.4\% & 63.6\% & 1.71 \\
+			OpenMP & 10M & 3,352,776 & 44.0\% & 56.0\% & 1.63 \\ 
+			\\
+			CUDA & 10K & 86,521 & 10.0\% & 90.0\% & 2.21 \\
+			CUDA & 100K & 104,697 & 10.3\% & 89.7\% & 2.34 \\
+			CUDA & 1M & 272,418 & 8.6\% & 91.4\% & 2.45 \\
+			CUDA & 10M & 2,028,921 & 7.1\% & 92.9\% & 2.70 \\
+			\\
+		\end{tabular}
+	\end{center}
+	\label{table:avge}
+	\caption{Average speed and scaleup over sequential algorithm for the counting problem on exons v. exome.}
+	\end{table}
+	
+	
 	% Performing a single operation independently on many different inputs
 	% is a classic parallelization scenario.  When based on the subroutine
 	% $\textsc{ICount}(B_S,B_E,a_i)$, which is independent of all 

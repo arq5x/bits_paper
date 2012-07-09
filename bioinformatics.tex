@@ -768,8 +768,21 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Parallel implementations}
 	
-	As we have demonstrated, the BITS algorithm is well-suited to counting
-	interval intersections, regardless of dataset size or genomic distribution.
+	As we have demonstrated, the BITS algorithm is well-suited for counting interval
+	intersections, regardless of dataset size or genomic distribution.  While there
+	are modest speedups over sequential algorithms for large data sets, Amdahl's
+	law~\cite{amdahl1967} states that any improvement from parallelization is
+	bounded by  the portion of the code that must be sequential.  This effect is
+	shown in Table~\ref{table:avge}.  The main steps for interval intersection are
+	reading files into arrays, and intersecting the two arrays (which requires
+	sorting and searching).  File I/O is an inherently sequential step and cannot be
+	parallelize and therefore dominates the run time as file sizes grow.  While both
+	sorting and intersecting can be parallelized, we were unable to find an OpenMP
+	sorting algorithm that outperformed the sequential qsort, therefore only
+	searching was done in parallel.  This accounts for the increase in time spent
+	intersecting as the input size grows.  In the CUDA, both sorting and searching
+	were done in parallel and the proportion of time spent intersecting shrinks as
+	file size grows.
 	
 	\begin{enumerate}
 		\item Simple data structure - array.

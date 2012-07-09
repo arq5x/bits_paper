@@ -15,28 +15,12 @@ Giardine, B., Riemer, C., Hardison, R.~C., Burhans, R., L, L.~E., Shah, P.,
 \newblock Galaxy: a platform for interactive large-scale genome analysis.
 \newblock {\em Genome Research\/}, {\bf 15}(10), 1451--1455.
 
-\bibitem[Goodrich {\em et~al.}(1993)Goodrich, Tsay, Vengroff, and
-  Vitter]{goodrich1993}
-Goodrich, M.~T., Tsay, J.-J., Vengroff, D.~E., and Vitter, J.~S. (1993).
-\newblock External-memory computational geometry.
-\newblock In {\em Proceedings of the 1993 {IEEE} 34th Annual Foundations of
-  Computer Science\/}, pages 714--723, Washington, DC, USA. IEEE Computer
-  Society.
-
 \bibitem[Kent {\em et~al.}(2002)Kent, Sugnet, Furey, Roskin, Pringle, Zahler,
   and Haussler]{kent2002}
 Kent, W.~J., Sugnet, C.~W., Furey, T.~S., Roskin, K.~M., Pringle, T.~H.,
   Zahler, A.~M., and Haussler, A.~D. (2002).
 \newblock The human genome browser at {UCSC}.
 \newblock {\em Genome Research\/}, {\bf 12}(6), 996--1006.
-
-\bibitem[Kriegel {\em et~al.}(1992)Kriegel, Brinkhoff, and
-  Schneider]{kriegel1991}
-Kriegel, H.-P., Brinkhoff, T., and Schneider, R. (1992).
-\newblock The combination of spatial access methods and computational geometry
-  in geographic database systems.
-\newblock In {\em Data Structures and Efficient Algorithms, Final Report on the
-  {DFG} Special Joint Initiative\/}, pages 70--86, London, UK. Springer-Verlag.
 
 \bibitem[Li {\em et~al.}(2009)Li, Handsaker, Wysoker, Fennell, Ruan, Homer,
   Marth, Abecasis, Durbin, and Subgroup]{li2009}

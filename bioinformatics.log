@@ -1,81 +1,112 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=latex 2011.7.3)  9 JUL 2012 13:28
+This is e-TeX, Version 3.1415926-2.2 (BaKoMa TNS 8.0) (preloaded format=ELATEX 2012.7.11)  11 JUL 2012 16:15
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**bioinformatics.tex
-(./bioinformatics.tex
+**&eLaTeX bioinformatics.tex
+SRCINFO: open 1:"bioinformatics.tex"
+(bioinformatics.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
- icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
-iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
- lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
-ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
-ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
-.
-(./bioinfo.cls
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, german-x-2008-06-18, ngerman-x-2008-06-18, ancientgreek, ibycus, ar
+abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
+h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
+greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, la
+tin, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, polish, portuguese, r
+omanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turki
+sh, ukenglish, ukrainian, uppersorbian, welsh, loaded.
+SRCINFO: open 8:"bioinfo.cls"
+(bioinfo.cls
 Document Class: bioinfo 2003/02/08 0.1
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
+SRCINFO: open 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/base/inputenc.sty"
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-) (./crop.sty
+)
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"crop.sty"
+ (crop.sty
 Package: crop 2001/11/16 v1.6 cropmarks (mf)
 \CROP@width=\dimen102
 \CROP@height=\dimen103
 \CROP@index=\count79
+SRCINFO: open 23:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/graphics.sty"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+SRCINFO: open 30:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/trig.sty"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: dvips.def on input line 91.
+SRCINFO: cont 23:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/graphics.sty"
+SRCINFO: open 25:"/Applications/BaKoMa TeX/.bakoma/BaKoMa/tex/latex/GRAPHICS.CFG"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-))
+(/Applications/BaKoMa TeX/.bakoma/BaKoMa/tex/latex/GRAPHICS.CFG)
+SRCINFO: cont 23:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/graphics.sty"
+Package graphics Info: Driver file: dvips.def on input line 91.
+SRCINFO: open 25:"/Applications/BaKoMa TeX/.bakoma/BaKoMa/tex/latex/dvips.def"
+
+(/Applications/BaKoMa TeX/.bakoma/BaKoMa/tex/latex/dvips.def
+File: dvips.def 2005/05/18 V 7.21 (BaKoMa TeX)
+
+(+ BaKoMa TeX 7.21 Extensions))
+SRCINFO: cont 23:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/graphics.sty"
+)
+SRCINFO: cont 15:"crop.sty"
 \CROP@offset=\count80
 Package crop Info: Local config file crop.cfg used on input line 344.
- (./crop.cfg))
+SRCINFO: open 17:"crop.cfg"
+ (crop.cfg)
+SRCINFO: cont 15:"crop.sty"
+)
+SRCINFO: cont 8:"bioinfo.cls"
 Package crop Info: using dvips graphics driver on input line 33.
- (./graphicx.sty
+SRCINFO: open 15:"graphicx.sty"
+ (graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+SRCINFO: open 22:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/keyval.sty"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
+SRCINFO: cont 15:"graphicx.sty"
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsmath.sty
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsmath.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amstext.sty
+SRCINFO: open 21:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amstext.sty"
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
+SRCINFO: open 28:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsgen.sty"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen106
-))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)
+SRCINFO: cont 21:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amstext.sty"
+)
+SRCINFO: cont 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsmath.sty"
+SRCINFO: open 21:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsbsy.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsopn.sty
+SRCINFO: cont 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsmath.sty"
+SRCINFO: open 21:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsopn.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
+SRCINFO: cont 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsmath/amsmath.sty"
 \inf@bad=\count81
 LaTeX Info: Redefining \frac on input line 211.
 \uproot@=\count82
@@ -113,35 +144,54 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
-) (./array.sty
+)
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"array.sty"
+
+(array.sty
 Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
 \col@sep=\dimen115
 \extrarowheight=\dimen116
 \NC@list=\toks22
 \extratabsurround=\skip44
 \backup@length=\skip45
-) (./color.sty
-Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"color.sty"
+ (color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+SRCINFO: open 17:"/Applications/BaKoMa TeX/.bakoma/BaKoMa/tex/latex/COLOR.CFG"
+
+(/Applications/BaKoMa TeX/.bakoma/BaKoMa/tex/latex/COLOR.CFG)
+SRCINFO: cont 15:"color.sty"
 Package color Info: Driver file: dvips.def on input line 125.
+SRCINFO: open 17:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/dvipsnam.def"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/dvipsnam.def
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+)
+SRCINFO: cont 15:"color.sty"
+)
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/amssymb.sty"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
+SRCINFO: open 21:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/amsfonts.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-))
-(./flushend.sty
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)
+SRCINFO: cont 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/amssymb.sty"
+)
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"flushend.sty"
+
+(flushend.sty
 Package: flushend 1997/10/01
 \@aaa=\box28
 \@ccc=\box29
@@ -150,13 +200,19 @@ Package: flushend 1997/10/01
 \atColsBreak=\toks23
 \@extra@skip=\dimen117
 \@nd@page@rule=\dimen118
-) (./stfloats.sty
+)
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"stfloats.sty"
+ (stfloats.sty
 Package: stfloats 1999/10/22
 \@dblbotnum=\count93
 \c@dblbotnumber=\count94
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2009/07/02 v2.20.1
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amscls/amsthm.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks24
 \thm@bodyfont=\toks25
 \thm@headfont=\toks26
@@ -167,13 +223,20 @@ Package: amsthm 2009/07/02 v2.20.1
 \thm@headsep=\skip48
 \dth@everypar=\toks29
 )
-(./chngpage.sty
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"chngpage.sty"
+
+(chngpage.sty
 Package: chngpage 2001/01/31 v1.1b change page layout
 \c@cp@cnt=\count95
 \c@cp@tempcnt=\count96
-) (./times.sty
+)
+SRCINFO: cont 8:"bioinfo.cls"
+SRCINFO: open 15:"times.sty"
+ (times.sty
 Package: times 2000/01/12 PSNFSS-v8.1 Times font as default roman (SPQR) 
 )
+SRCINFO: cont 8:"bioinfo.cls"
 \c@section=\count97
 \c@subsection=\count98
 \c@subsubsection=\count99
@@ -189,14 +252,20 @@ Package: times 2000/01/12 PSNFSS-v8.1 Times font as default roman (SPQR)
 \rotdimen=\dimen119
 \tempdime=\dimen120
 \temptbox=\box32
- (./natbib.sty
+SRCINFO: open 15:"natbib.sty"
+ (natbib.sty
 Package: natbib 2000/07/24 7.0a (PWD)
 \bibhang=\skip54
 \bibsep=\skip55
 LaTeX Info: Redefining \cite on input line 508.
 \c@NAT@ctr=\count104
-))
-(/usr/local/texlive/2011/texmf-dist/tex/latex/subfigure/subfigure.sty
+)
+SRCINFO: cont 8:"bioinfo.cls"
+)
+SRCINFO: cont 1:"bioinformatics.tex"
+SRCINFO: open 8:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/subfigure/subfigure.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 
 
@@ -223,292 +292,361 @@ Package subfigure Warning: Your document class has a bad definition
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/usr/local/texlive/2011/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+SRCINFO: open 10:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/subfigure/subfigure.cfg"
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/subfigure/subfigure.cfg)
+SRCINFO: cont 8:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/subfigure/subfigure.sty"
 \subfig@top=\skip60
 \subfig@bottom=\skip61
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
-Package: algorithm2e 2008/00/00 v3.10 algorithms environments
-\c@AlgoLine=\count109
+SRCINFO: cont 1:"bioinformatics.tex"
+SRCINFO: open 8:"float.sty"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty
+(float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count109
+\float@exts=\toks30
+\float@box=\box33
+\@float@everytoks=\toks31
+\@floatcapt=\box34
+)
+SRCINFO: cont 1:"bioinformatics.tex"
+SRCINFO: open 8:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/algorithm2e/algorithm2e.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2005/10/04 v3.9 algorithms environments
+\c@AlgoLine=\count110
+SRCINFO: open 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/base/ifthen.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/xspace.sty
+SRCINFO: cont 8:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/algorithm2e/algorithm2e.sty"
+SRCINFO: open 15:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/tools/xspace.sty"
+
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/tools/xspace.sty
 Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/relsize/relsize.sty
-Package: relsize 2003/07/04 ver 3.1
-)
+SRCINFO: cont 8:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/algorithm2e/algorithm2e.sty"
+
 ********************************************************
-Package `algorithm2e' Release 4.01 -- december 14 2009 --
+Package `algorithm2e' Release 3.9 -- october 04 2005 --
 - algorithm2e-announce@lirmm.fr mailing list for announcement about releases
 - algorithm2e-discussion@lirmm.fr mailing list for discussion about package
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (fiorio@lirmm.fr)
 ********************************************************
 \skiptotal=\skip62
-\skiplinenumber=\skip63
-\skiprule=\skip64
-\skiphlne=\skip65
-\skiptext=\skip66
-\skiplength=\skip67
-\algomargin=\skip68
-\skipalgocfslide=\skip69
+\skiprule=\skip63
+\skiphlne=\skip64
+\skiptext=\skip65
+\skiplength=\skip66
+\algomargin=\skip67
+\skipalgocfslide=\skip68
 \algowidth=\dimen123
 \inoutsize=\dimen124
 \inoutline=\dimen125
-\interspacetitleruled=\dimen126
-\interspacealgoruled=\dimen127
-\interspacetitleboxruled=\dimen128
-\algocf@inoutbox=\box33
-\algocf@inputbox=\box34
-\AlCapSkip=\skip70
-\AlCapHSkip=\skip71
-\algocf@nlbox=\box35
-\algocf@hangingbox=\box36
+\algocf@inoutbox=\box35
+\algocf@inputbox=\box36
+\AlCapSkip=\skip69
+\AlCapHSkip=\skip70
 \algocf@capbox=\box37
-\algoheightruledefault=\skip72
-\algoheightrule=\skip73
-\algotitleheightruledefault=\skip74
-\algotitleheightrule=\skip75
-\c@algocfline=\count110
-\c@algocfproc=\count111
+\c@algocfline=\count111
 \c@algocf=\count112
+! Too many }'s.
+l.1616     }
+            
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \fi.
+l.1617 \fi
+          
+I'm ignoring this; it doesn't match any \if.
+
 \algocf@algoframe=\box38
 \algocf@algobox=\box39
-) (./bioinformatics.aux)
+)
+SRCINFO: cont 1:"bioinformatics.tex"
+SRCINFO: open 4:"bioinformatics.aux"
+ (bioinformatics.aux)
+SRCINFO: cont 1:"bioinformatics.tex"
 \openout1 = `bioinformatics.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 10.
+SRCINFO: open 9:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/psnfss/ot1ptm.fd"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 31.
+SRCINFO: cont 1:"bioinformatics.tex"
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 32.
+SRCINFO: open 10:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/psnfss/ot1phv.fd"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/ot1phv.fd
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
+SRCINFO: cont 1:"bioinformatics.tex"
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 31.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 31.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 31.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 32.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 32.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 31.
+(Font)              size <12> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 31.
+(Font)              size <6> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 31.
+(Font)              size <12> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 31.
+(Font)              size <6> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 31.
+(Font)              size <12> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 31.
+(Font)              size <6> substituted on input line 32.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 31.
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 32.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+SRCINFO: open 19:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/umsa.fd"
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 31.
+SRCINFO: cont 1:"bioinformatics.tex"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+
+LaTeX Font Warning: Font shape `U/msa/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `U/msa/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 32.
+
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+SRCINFO: open 19:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/umsb.fd"
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 31.
+SRCINFO: cont 1:"bioinformatics.tex"
 
+
+LaTeX Font Warning: Font shape `U/msb/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `U/msb/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 32.
+
+LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 32.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 31.
+(Font)              size <5> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 31.
+(Font)              size <5> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 31.
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `U/msa/m/n' in size <4.54997> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `U/msb/m/n' in size <4.54997> not available
+(Font)              size <5> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 31.
+(Font)              size <7> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 31.
+(Font)              size <7> substituted on input line 32.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 31.
+(Font)              size <7> substituted on input line 32.
 
 
-Underfull \hbox (badness 10000) detected at line 31
+LaTeX Font Warning: Font shape `U/msa/m/n' in size <7.5> not available
+(Font)              size <7> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `U/msb/m/n' in size <7.5> not available
+(Font)              size <7> substituted on input line 32.
+
+
+Underfull \hbox (badness 10000) detected at line 32
 []
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 34.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 35.
 
-Underfull \hbox (badness 3138) in paragraph at lines 34--47
+Underfull \hbox (badness 3138) in paragraph at lines 35--48
 \OT1/phv/m/n/8 datasets is fundamental to understanding the biology of the
  []
 
 
-Underfull \hbox (badness 2478) in paragraph at lines 34--47
+Underfull \hbox (badness 2478) in paragraph at lines 35--48
 \OT1/phv/m/n/8 must explore many large datasets of genome intervals (e.g.,
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 34--47
+Underfull \hbox (badness 1540) in paragraph at lines 35--48
 \OT1/phv/m/n/8 genes, polymorphisms, and sequence alignments) in order to
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 34--47
+Underfull \hbox (badness 2261) in paragraph at lines 35--48
 \OT1/phv/m/n/8 place their experiments in a broader context and make new
  []
 
 
-Underfull \hbox (badness 2932) in paragraph at lines 34--47
+Underfull \hbox (badness 2932) in paragraph at lines 35--48
 \OT1/phv/m/n/8 discoveries. Relationships between experimental datasets and
  []
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 48--59
+Underfull \hbox (badness 1019) in paragraph at lines 49--60
 \OT1/phv/b/n/8 Results: \OT1/phv/m/n/8 Here we introduce the Binary Interval Se
 arch (BITS)
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 48--59
+Underfull \hbox (badness 2012) in paragraph at lines 49--60
 \OT1/phv/m/n/8 algorithm, a novel and scalable approach to the interval set
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 65.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 66.
 
-Underfull \hbox (badness 3229) in paragraph at lines 77--90
+Underfull \hbox (badness 3229) in paragraph at lines 78--91
 []\OT1/ptm/m/n/9 As high throughput sequencing technologies have quickly
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 77--90
+Underfull \hbox (badness 1052) in paragraph at lines 78--91
 \OT1/ptm/m/n/9 become the \OT1/ptm/m/it/9 de facto \OT1/ptm/m/n/9 molecular too
 l for genome biology, the
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 77--90
+Underfull \hbox (badness 1389) in paragraph at lines 78--91
 \OT1/ptm/m/n/9 increasingly acute. Traditional techniques for measuring gene
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 97.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
 
-Package natbib Warning: Citation `(' on page 1 undefined on input line 97.
+Package natbib Warning: Citation `(' on page 1 undefined on input line 98.
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 91--112
+Underfull \hbox (badness 1817) in paragraph at lines 92--113
 \OT1/ptm/m/n/9 counting problem by a straight-forward reduction to element
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 126.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 127.
 
+SRCINFO: open 14:"/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/psnfss/omsphv.fd"
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/omsphv.fd
+(/Applications/BaKoMa TeX/.bakoma/texmf/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
+SRCINFO: cont 1:"bioinformatics.tex"
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 126.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 127.
  [1
 
 
 
 ]
-Underfull \hbox (badness 4120) in paragraph at lines 144--146
+Underfull \hbox (badness 4120) in paragraph at lines 145--147
 []\OT1/ptm/m/n/9 The \OT1/ptm/m/it/9 counting problem $[]\OT1/cmr/m/n/9 (\OML/c
 mm/m/it/9 A; B\OT1/cmr/m/n/9 )$\OT1/ptm/m/n/9 : how many pair-wise
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 146--148
+Underfull \hbox (badness 1077) in paragraph at lines 147--149
 []\OT1/ptm/m/n/9 The \OT1/ptm/m/it/9 per-interval counting problem $[]\OT1/cmr/
 m/n/9 (\OML/cmm/m/it/9 A; B\OT1/cmr/m/n/9 )$\OT1/ptm/m/n/9 : how many
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 152--156
+Underfull \hbox (badness 1490) in paragraph at lines 153--157
 []\OT1/ptm/m/n/9 While the algorithm we have devised solves all four sub-
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 152--156
+Underfull \hbox (badness 1953) in paragraph at lines 153--157
 \OT1/ptm/m/n/9 problems, it is designed to efficiently \OT1/ptm/m/it/9 count \O
 T1/ptm/m/n/9 the number of
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 180--194
+Underfull \hbox (badness 1552) in paragraph at lines 181--195
 \OT1/ptm/m/n/9 while other bins are empty. Consequently, threads searching
  []
 
 
-Underfull \hbox (badness 1112) in paragraph at lines 180--194
+Underfull \hbox (badness 1112) in paragraph at lines 181--195
 \OT1/ptm/m/n/9 full bins will take substantially longer than threads searching
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 195--215
+Underfull \hbox (badness 2671) in paragraph at lines 196--216
 []\OT1/ptm/m/n/9 Recent versions of BEDTools and BEDOPS (\OT1/ptm/b/n/9 TODO ci
 te
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 261.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 262.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 261.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 262.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -526,7 +664,23 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 File: figures/Figure1.v3.eps Graphic file (type eps)
  <figures/Figure1.v3.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 265.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 266.
+
+! Undefined control sequence.
+l.322 		\DontPrintSemicolon
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+SRCINFO: cont 1:"bioinformatics.tex"
+
+Underfull \hbox (badness 10000) detected at line 335
+[][]
+ []
+
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -536,36 +690,69 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 2189) in paragraph at lines 488--495
+! Undefined control sequence.
+l.387 			\DontPrintSemicolon
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+SRCINFO: cont 1:"bioinformatics.tex"
+SRCINFO: cont 1:"bioinformatics.tex"
+
+Underfull \hbox (badness 10000) detected at line 405
+[][]
+ []
+
+! Undefined control sequence.
+l.416 			\DontPrintSemicolon
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+SRCINFO: cont 1:"bioinformatics.tex"
+SRCINFO: cont 1:"bioinformatics.tex"
+
+Underfull \hbox (badness 10000) detected at line 434
+[][]
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 489--496
 \OT1/ptm/m/n/9 which requires $\OML/cmm/m/it/9 O\OT1/cmr/m/n/9 (\OMS/cmsy/m/n/9
  j\OML/cmm/m/it/9 B\OMS/cmsy/m/n/9 j [] j\OML/cmm/m/it/9 B\OMS/cmsy/m/n/9 j\OT1
 /cmr/m/n/9 )$ \OT1/ptm/m/n/9 time. Next, each instance of
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 520--527
+Underfull \hbox (badness 1845) in paragraph at lines 521--528
 \OT1/ptm/m/n/9 subroutine $[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 B[]; B[]; a\OT1/cm
 r/m/n/9 )$\OT1/ptm/m/n/9 , which is independent of all
  []
 
 
-Underfull \hbox (badness 4556) in paragraph at lines 528--545
+Underfull \hbox (badness 4556) in paragraph at lines 529--546
 \OT1/ptm/m/n/9 a single instruction multiple data (SIMD) architecture that
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 568--573
+Underfull \hbox (badness 1939) in paragraph at lines 570--575
 []\OT1/ptm/m/n/9 Because of the different data structures used, the relative
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 568--573
+Underfull \hbox (badness 2150) in paragraph at lines 570--575
 \OT1/ptm/m/n/9 performance of each approach may depend on the genomic
  []
 
 
-Overfull \hbox (14.14949pt too wide) in paragraph at lines 577--580
-\OT1/ptm/m/n/9 between exome-capture alignments and whole-genome alignments.
+Underfull \hbox (badness 2310) in paragraph at lines 579--582
+\OT1/ptm/m/n/9 exome-capture alignments and whole-genome alignments.
  []
 
 
@@ -582,53 +769,65 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [4]
-Underfull \hbox (badness 1418) in paragraph at lines 589--594
-\OT1/ptm/m/n/9 exons and exome-capture alignments. By design, exome
+File: figures/seq-counting.eps Graphic file (type eps)
+ <figures/seq-counting.eps>
+Overfull \hbox (1.89pt too wide) in paragraph at lines 602--622
+ [][] 
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 597--608
+Underfull \hbox (badness 7925) in paragraph at lines 626--637
  \OT1/ptm/m/it/9 3.1.1 BITS excels at counting intersections[] \OT1/ptm/m/n/9 I
 n all three
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 597--608
+Underfull \hbox (badness 1590) in paragraph at lines 626--637
 \OT1/ptm/m/n/9 intersections than \OT1/ptm/m/it/9 enumerating \OT1/ptm/m/n/9 in
 tersections. This behavior is
  []
 
 
-Underfull \hbox (badness 2035) in paragraph at lines 597--608
+Underfull \hbox (badness 2035) in paragraph at lines 626--637
 \OT1/ptm/m/n/9 example, ChIP-seq peak detection proceeds by counting the
  []
 
-File: figures/genome-v-exome.eps Graphic file (type eps)
-<figures/genome-v-exome.eps>
-Underfull \hbox (badness 2671) in paragraph at lines 616--626
+
+Underfull \hbox (badness 2671) in paragraph at lines 640--650
  \OT1/ptm/m/it/9 3.1.2 BITS is well-suited to large intersections and biased
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 628--635
+Underfull \hbox (badness 1389) in paragraph at lines 652--659
 []\OT1/ptm/m/n/9 Similarly, datasets such as exome-capture experiments lead
  []
 
 
-Underfull \hbox (badness 3590) in paragraph at lines 628--635
+Underfull \hbox (badness 3590) in paragraph at lines 652--659
 \OT1/ptm/m/n/9 to biased distributions of intervals among the UCSC bins.
  []
 
-File: figures/exons-v-genome.eps Graphic file (type eps)
-<figures/exons-v-genome.eps>
-File: figures/exons-v-exome.eps Graphic file (type eps)
- <figures/exons-v-exome.eps>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package natbib Warning: Citation `amdahl1967' on page 5 undefined on input line
- 746.
+ 770.
+
+
+Underfull \hbox (badness 2990) in paragraph at lines 788--789
+[]\OT1/ptm/m/n/9 we implemented BITS for OpenMP and CUDA (supp.
+ []
+
+File: figures/heatmap.eps Graphic file (type eps)
+<figures/heatmap.eps>
+Overfull \hbox (262.88998pt too wide) in paragraph at lines 870--871
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 36.86235pt on input line 872.
 
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
@@ -639,48 +838,46 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
  [5]
-Underfull \hbox (badness 2990) in paragraph at lines 764--765
-[]\OT1/ptm/m/n/9 we implemented BITS for OpenMP and CUDA (supp.
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-File: figures/heatmap.eps Graphic file (type eps)
-<figures/heatmap.eps>
-Overfull \hbox (262.88998pt too wide) in paragraph at lines 846--847
-[][] 
- []
-
-
-LaTeX Warning: Float too large for page by 36.86235pt on input line 848.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 3635) in paragraph at lines 868--880
+Underfull \hbox (badness 3635) in paragraph at lines 892--904
 \OT1/ptm/m/n/9 the database for each query interval are independent, and
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 868--880
+Underfull \hbox (badness 1661) in paragraph at lines 892--904
 \OT1/ptm/m/n/9 algorithm a perfect candidate for GPU architectures that are
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 868--880
+Underfull \hbox (badness 1721) in paragraph at lines 892--904
 \OT1/ptm/m/n/9 peak detection, and searches for copy-number and structural
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 886--887
+Underfull \hbox (badness 1708) in paragraph at lines 910--911
 []\OT1/ptm/b/n/9 TO DO: Discuss the potential for using BITS for new
  []
 
-(./bioinformatics.bbl
+SRCINFO: open 3:"bioinformatics.bbl"
+(bioinformatics.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ³ in font ptmr7t!
+)
+SRCINFO: cont 1:"bioinformatics.tex"
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 351.77168pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:351.77168pt Right:351.54338pt Output:351.77168pt
+- LAST -
+Extra skip:0.0pt
+Left:351.77168pt
+Right:351.54338pt
+Output:351.77168pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -698,28 +895,21 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
  []
 
 [6]
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ³ in font ptmr7t!
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (319.0pt too high) has occurred while \output is active []
 
+Extra height:0.0pt when 329.0pt
 
-Overfull \vbox (177.45103pt too high) has occurred while \output is active []
+Overfull \vbox (319.0pt too high) has occurred while \output is active []
 
-Extra height:0.0pt when 470.54897pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:470.54897pt Right:648.0pt Output:470.54897pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:648.0pt Right:648.0pt Output:648.0pt
+(2)Left:329.0pt Right:10.0pt Output:329.0pt
 - LAST -
 Extra skip:0.0pt
-Left:648.0pt
-Right:648.0pt
-Output:648.0pt
+Left:329.0pt
+Right:10.0pt
+Output:329.0pt
+
+Overfull \vbox (319.0pt too high) has occurred while \output is active []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -731,23 +921,44 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 
 Overfull \vbox (1.0pt too high) has occurred while \output is active []
 
- [7]
+ [7
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+[8]
 
 Package natbib Warning: There were undefined citations.
 
-(./bioinformatics.aux)
+SRCINFO: open 4:"bioinformatics.aux"
+(bioinformatics.aux)
+SRCINFO: cont 1:"bioinformatics.tex"
+
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 3779 strings out of 493634
- 47098 string characters out of 3143401
- 124873 words of memory out of 3000000
- 7015 multiletter control sequences out of 15000+200000
- 32903 words of font info for 91 fonts, out of 3000000 for 9000
- 835 hyphenation exceptions out of 8191
- 35i,17n,26p,276b,518s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 3680 strings out of 24692
+ 43295 string characters out of 427074
+ 129776 words of memory out of 5000001
+ 6805 multiletter control sequences out of 10000+10000
+ 31036 words of font info for 82 fonts, out of 200000 for 1000
+ 718 hyphenation exceptions out of 10000
+ 35i,17n,26p,284b,444s stack positions out of 1300i,100n,1500p,30000b,4000s
 
-Output written on bioinformatics.dvi (7 pages, 52324 bytes).
+Output written on bioinformatics.dvi (8 pages, 86048 bytes).

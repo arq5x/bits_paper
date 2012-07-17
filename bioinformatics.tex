@@ -242,11 +242,12 @@
         starts before interval $a_i$ ends (e.g, interval $e$ in Fig. 1A).  
         This would seem to imply that if $b_j$ does not intersect $a_i$, 
         then no intervals in $B$ intersect $a_i$, and if $b_j$ does intersect
-        $a_i$, then other intersecting intervals in $B$ could be found by scanning the
-        intervals starting before $b_j$ in decreasing order, stopping at the first
-        interval that does not intersect $a_i$.  However, this technique is 
-        complicated by the possibility of intervals that are wholly {\em contained} 
-        inside other intervals (e.g., interval \emph{c} in Fig. 1B). 
+        $a_i$, then other intersecting intervals in $B$ could be found by
+        scanning the intervals starting before $b_j$ in decreasing order,
+        stopping at the first interval that does not intersect $a_i$. 
+        However, this technique is complicated by the possibility of 
+        intervals that are wholly {\em contained} inside other intervals 
+        (e.g., interval \emph{c} in Fig. 1B). 
         
         An interval $b_j\in B$ is ``contained'' if there exists an interval
         $b_k \in B$ where $b_k.start \leq b_j.start$ and $b_j.end \leq
@@ -345,7 +346,7 @@
         numerically in ascending order.  Next, two binary searches are performed,
         $last=\textsc{ BSearch}(B_E, a_i.start)$ and 
         $first=\textsc{ BSearch}(B_S, a_i.end)$.  Since $B_E$ is a sorted list of each
-        intervak end coordinate in $B$, the elements
+        interval end coordinate in $B$, the elements
         less than or equal to $last$ in $B_E$ correspond to the set of intervals in $B$
         that end \emph{before} $a_i$ starts (i.e., to the "left" of).
         Similarly, the elements greater than or equal to $first$ in $B_S$ correspond to the
@@ -557,48 +558,61 @@
         % RESULTS: Comparing sequential BITS to existing approaches
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{Comparing sequential BITS to existing approaches}
-        We implemented a single-core version of the BITS algorithm as a C/C++ utility 
-        in our BEDTools~\citep{quinlan2010} genome arithmetic suite.
-        Here we assess the performance of this sequential BITS implementation to BEDTOOLS and 
-        the bedIntersect utility available through the UCSC Genome Browser ("Kent source") \citep{kent2002} 
-        (\textbf{see Suppl. Methods - describe commands, how we did timing, what machine, CPU, GPU, startup-time, etc.}).
-        We compare the performance of each tool for the \emph{counting}, \emph{per interval counting}, 
-        and enumeration problems, as these are the three most widely used interval intersection sub-problems in genomics research. 
-        The comparisons presented are based sequence alignment intervals extracted from datasets created 
-        for the CEU individual NA12878 by the 1000 Genomes Project\textbf{TO: CITE}), as well as
-        RefSeq exons (N=400,531).  We randomly sampled 1 and 10 million alignment intervals from both 
-        whole-genome and exome-capture datasets for this individual (see Supplemental Methods).
-        
-        Because of the different data structures used, the relative performance of each 
-        approach may depend on the genomic distribution of intervals within the sets.  For example, 
-        tree-based solutions placing intervals into hierarchical bins may perform poorly when intervals are 
-        unevenly distributed among the bins. Therefore, each algorithm was evaluated 
-        considering three different interval intersection scenarios:
+        We implemented a sequential version of the BITS algorithm as a
+        standalone C/C++ utility using our BEDTools~\citep{quinlan2010} 
+        genome arithmetic suite. Here we assess the performance of this 
+        sequential implementation relative to the BEDTOOLS \texttt{intersect}
+        and UCSC Genome Browser's ("UCSC") \citep{kent2002} \texttt{bedIntersect} 
+        utilities (\textbf{see Suppl. Methods - describe commands, how we did 
+        timing, what machine, CPU, GPU, startup-time, etc.}).
+        We compare the performance of each tool for \emph{counting} the total
+        number of observed intersections between sets of intervals of varying
+        sizes (Figure 2). The comparisons presented are based sequence alignment
+        intervals extracted from datasets created for the CEU individual NA12878 
+        by the 1000 Genomes Project\textbf{TO: CITE}), as well as
+        RefSeq exons (N=400,531). Owing to the different data structures used by
+        each algorithm, the relative performance of each approach may depend 
+        on the genomic distribution of intervals within the sets.  For example, 
+        tree-based solutions (i.e., BEDTools and UCSC) placing intervals into 
+        hierarchical bins may perform poorly when intervals are unevenly 
+        distributed among the bins. To test the effect of differing interval 
+        distributions on algorithm performance, we randomly sampled 1 and 10 
+        million alignment intervals from both whole-genome and exome-capture 
+        datasets for this individual (see Supplemental Methods). Each algorithm 
+        was evaluated considering three different interval 
+        intersection scenarios:
 
                 \begin{enumerate}
                         \item
 
-                        {\em Intervals from different distributions}: the intersection between exome-capture 
-                        alignments and whole-genome alignments. Since the interval sets have a large number of intervals
-                        and each set has a different genomic distribution, we expect a small number of intersections.
+                        {\em Intervals from different distributions}: the 
+                        intersection between exome-capture alignments and 
+                        whole-genome alignments. Since the interval sets have 
+                        a large number of intervals and each set has a 
+                        different genomic distribution, we expect a small 
+                        number of intersections.
                         
                         \item
-                        {\em Uniform interval distribution}: the intersection between 
-                        Refseq exons and genome-wide sequencing data.  Since each interval set
-                        is, for the most part, evenly distributed throughout the genome, we expect 
-                        that each exon will intersect roughly the same number of sequencing intervals, 
-                        and a large number of sequencing intervals will not intersect an exon.
+                        {\em Uniform interval distribution}: the intersection 
+                        between Refseq exons and genome-wide sequencing data.  
+                        Since each interval set is, for the most part, 
+                        evenly distributed throughout the genome, we expect 
+                        that each exon will intersect roughly the same number of 
+                        sequencing intervals, and a large number of sequencing 
+                        intervals will not intersect an exon.
 
                         \item
-                        {\em Biased interval distribution}:  the intersection between exons and exome-capture
-                        alignments.  By design, exome sequencing experiments intentionally bias DNA sequences to the coding exons.  
-                        Thus, the vast majority of sequence intervals will align in exonic regions. In contrast to the previous 
-                        scenario, nearly every exon interval will have a large number of sequence interval intersections, and 
-                        nearly all sequencing intervals will intersect an exon.
-        
+                        {\em Biased interval distribution}:  the intersection 
+                        between exons and exome-capture alignments. By design, 
+                        exome sequencing experiments intentionally bias DNA 
+                        sequences to the coding exons. Thus, the vast majority 
+                        of sequence intervals will align in exonic regions. In
+                        contrast to the previous scenario, nearly every exon 
+                        interval will have a large number of sequence interval
+                        intersections, and nearly all sequencing intervals will 
+                        intersect an exon.
                 \end{enumerate}
 
-    % http://paul.sroufe.org/blog/latexandfigureplacement
         \begin{figure*}[!h]
                 \centering
                 \includegraphics[width=7in]{figures/seq-counting.eps}
@@ -625,39 +639,36 @@
         \end{figure*}
         
         \subsubsection{BITS excels at counting intersections}
-        In all three intersection scenarios, BITS had superior performance for \emph{counting} intersections
-        than \emph{enumerating} intersections. This behavior is expected given that design of the BITS algorithm
-        is founded upon the observation that, by binary searching the starts and ends of the interval database, 
-        intersections can be counted without directly enumerating each intersection. However, recall that in order to enumerate
-        intersections (\textbf{Algorithm 4}), BITS must first count the number of intersections and then make 
-        a second pass to enumerate each intersection. While enumeration is a limitation of the algorithm, 
-        we argue that counting and per interval counting are more relevant to large-scale genomic data exploration. 
-        For example, ChIP-seq peak detection proceeds by counting the number of alignments that "pile-up" in focal binding regions \textbf{cite}.
-        Similarly, RNAseq analyses use genic read counts to estimate differential expression (\textbf{cite}), and sequence-based 
-        approaches for detecting genomic copy-number variation require that the genome is segmented into copy-number states based
-        on sequence alignment counts.
-
         
-        \subsubsection{BITS is well-suited to large intersections and biased data distributions.}
-        While our BITS implementation substantially (between X and Y times faster) outperformed BEDTOOLS 
-        in all scenarios, it was, on average, X \textbf{fix me!} times slower than the UCSC bedIntersect utility. 
-        In part, this may be due to the maturity and technical sophistication of the Kent source tools. However, the
-        primary contribution is likely the fundamental differences in the data structures used by
-        the UCSC binning algorithm and by BITS.  The UCSC binning algorithm distributes genomic intervals
-        into hierarchical bins, and as such, excels when intervals are evenly distributed among bins, \emph{and}
-        when individual bins contain a relatively small number of intervals.  However, the performance of the algorithm
-        is diminished for very large datasets, even when the intervals are evenly distributed, as on average, the number
-        of intervals in each queried bin will be relatively large (\textbf{Fig. 2}; size = 1e7). In contrast, as BITS is based on
-        binary search ($O(\log |B|)$ complexity), its performance scales more linearly with respect to dataset size.
+        In all three interval distribution scenarios, the sequential version 
+        of BITS had superior runtime performance for counting intersections.
+        BITS was between 11.2 and 27.9 times faster than BEDTools and between 
+        1.2 and 5.2 times faster than UCSC (Figure 2). This behavior is 
+        expected; whereas the BEDTools and UCSC tree-based algorithms must 
+        \emph{enumerate} each intersection in order to derive the \emph{count} 
+        of intersections, BITS can \emph{infer} the intersection count by 
+        exclusion without enumeration.
 
-        
-        Similarly, datasets such as exome-capture experiments lead to biased distributions of intervals among the UCSC bins.
-        Consequently, most bins contain no intervals, while a small fraction contain many intervals. When the query intervals
-        reflect the same bias, the overhead of the UCSC algorithm is more onerous, as a small number of bins are queried 
-        and each queried bin contains many intersecting intervals that must be enumerated. As the BITS algorithm
-        is agnostic to the interval distributions, it will outperform the UCSC algorithm for common genomic analyses such
-        as ChIP-seq, RNA-seq, and CNV detection, especially for the typically large sequence alignment datasets
-        that these experiments generate ((\textbf{Fig. 4})).
+        \subsubsection{BITS outperforms for large intersections and biased data distributions.}
+        The relative performance gains of the BITS approach are enhanced for 
+        very large datasets (Figure 2B), as the tree-based methods will, on 
+        average, have a large number of intervals in each queried bin. In 
+        contrast, since BITS is based on binary search ($O(\log |B|)$ 
+        complexity), its performance scales more linearly with respect to 
+        dataset size.
+
+        Similarly, datasets such as exome-capture experiments lead to biased 
+        distributions of intervals among the UCSC bins. Consequently, most 
+        bins in tree-based methods will contain no intervals, while a small 
+        fraction contain many intervals. When the query intervals
+        have the same bias, the overhead of the UCSC algorithm is more 
+        onerous, as a small number of bins are queried and each queried bin 
+        contains many intersecting intervals that must be enumerated in order 
+        to count overlaps. As the BITS algorithm is agnostic to the interval 
+        distributions, it will outperform the UCSC algorithm (Figure 2A, 2B) 
+        for common genomic analyses such as ChIP-seq, RNA-seq, and CNV 
+        detection, especially for the typically large sequence alignment 
+        datasets that these experiments generate.
         
     % \begin{figure}[h]
     %   \centering
@@ -766,6 +777,9 @@
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{Parallel implementations}
         
+        \textbf{To do: say something about how this motivates a problem (MC)
+        that emphasizes the parallelizable aspects of the algorithm}
+        
         As we have demonstrated, the BITS algorithm is well-suited for counting interval
         intersections, regardless of dataset size or genomic distribution.  While there
         are modest speedups over sequential algorithms for large data sets, Amdahl's
@@ -776,7 +790,7 @@
         sorting and searching).  File I/O is an inherently sequential step and cannot be
         parallelize and therefore dominates the run time as file sizes grow.  While both
         sorting and intersecting can be parallelized, we were unable to find an OpenMP
-        sorting algorithm that outperformed the sequential qsort, therefore only
+        sorting algorithm that outperformed the sequential qsort, therefore onl
         searching was done in parallel.  This accounts for the increase in time spent
         intersecting as the input size grows.  In the CUDA, both sorting and searching
         were done in parallel and the proportion of time spent intersecting shrinks as
@@ -908,6 +922,7 @@
         
         \textbf{TO DO: Discuss more performant versions when data is pre-sorted.}
 
+        \textbf{TO DO: mention per-interval counting for RNAseq, Chipseq, etc}
         \textbf{TO DO: Discuss the potential for using BITS for new statistical measures.  For
         example, the Jaccard measure in the recent PLoS CompBio paper.}
         

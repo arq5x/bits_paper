@@ -3,6 +3,7 @@
 \usepackage{subfigure}
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{multirow}
 \usepackage[ruled,vlined]{algorithm2e}
 
 \copyrightyear{2012}
@@ -776,7 +777,33 @@
         % RESULTS: Parallel implementations 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \subsection{Parallel implementations}
+
+        \centering
+        \begin{center}
+            \begin{tabular}{l l c c c c}
+            \multicolumn{2}{c}{} & \multicolumn{4}{c}{No. of MC iterations} \\
+            \cline{3-6}
+            Size & Tool & 1 & 100 & 1000 & 100000 \\
+            \hline
+            \hline
+            1e5 & BITS-CUDA & 0.73 & 1  & 4   & 28 \\
+                & BITS-SEQ  & 0.41 & 7  & 68  & 680 \\
+                & UCSC      & 0.17 & 14 & 138 & 1381 \\
+            \\
+            1e6 & BITS-CUDA & 2 & 3    & 1       & 103 \\
+                & BITS-SEQ  & 5 & 120  & \emph{1200} & \emph{12000} \\
+                & UCSC      & 6 & 878  & \emph{8780} & \emph{87800} \\
+            \\
+            1e7 & BITS-CUDA & 14  & 22    & 97            & 835 \\
+                & BITS-SEQ  & 66  & 2235  & \emph{22350}  & \emph{223500} \\
+                & UCSC      & 568 & 28508 & \emph{285080} & \emph{2850800} \\
+            
+            \hline
+            \end{tabular}
+        \end{center}
+        \label{table:avge}
         
+                
         \textbf{To do: say something about how this motivates a problem (MC)
         that emphasizes the parallelizable aspects of the algorithm}
         

@@ -582,6 +582,7 @@ three different interval intersection scenarios:
 	source", respectively. "Exons" represents 400,351 RefSeq exons (autosomal
 	and X, Y) for the human genome (Build 37).  BED = BEDTools; UCSC = "Kent
 	source"}
+	\label{seq-counting}
 \end{figure*}
 
 \begin{enumerate}
@@ -612,7 +613,7 @@ three different interval intersection scenarios:
 In all three interval distribution scenarios, the sequential version of BITS had
 superior runtime performance for counting intersections.  BITS was between 11.2
 and 27.9 times faster than BEDTools and between 1.2 and 5.2 times faster than
-UCSC (Figure 2). This behavior is expected; whereas the BEDTools and UCSC
+UCSC (Figure~\ref{seq-counting}). This behavior is expected; whereas the BEDTools and UCSC
 tree-based algorithms must \emph{enumerate} each intersection in order to derive
 the \emph{count} of intersections, BITS can \emph{infer} the intersection count
 by exclusion without enumeration.
@@ -738,9 +739,29 @@ the typically large sequence alignment datasets that these experiments generate.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RESULTS: Parallel implementations 
+% RESULTS: Applications for Monte Carlo Simulations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Parallel implementations}
+\subsection{Applications for Monte Carlo Simulations}
+
+BITS is particularly well suited for Monte Carlo simulations.  The basic process
+for a single intersection begins with data structure setup.  The BITS setup maps
+each interval from the two-dimensional chromosomal intervals space to a single
+dimension integer interval space then sorts the intervals.  The UCSC setup
+places each chromosomal interval into a hash table.  As shown
+Figure~\ref{seq-counting}, setup is a significant portion of the total process.
+In the case of Monte Carlo simulation rounds, where a uniformly distributed
+random interval set is generated and placed into the associated data structure,
+the setup step is faster in BITS while it remains the same for UCSC.  For BITS,
+the mapping step is skipped and only an array of random starts is be generated.
+The result is a 6x speedup for Monte Carlo setup over single intersection setup.
+For UCSC, both the chromosome and the interval start position must be generated
+and then placed into the hash with no change in execution time.  This speedup is
+extended on parallel platforms, where efficient parallel random number
+generation and parallel sorting algorithms are available.  The improved
+performance of BITS over UCSC in Monte Carlo simulations is showin in
+Table~\ref{table:avge}.  Due to the long runtimes, timings for BITS-SEQ and UCSC
+with set sizes 1e6 and 1e7 and itterations 1000 and 10000 (in itallics) were
+estimated from their 1e5 times.
 
 \begin{center}
 	\begin{tabular}{l l c c c c}
@@ -767,24 +788,58 @@ the typically large sequence alignment datasets that these experiments generate.
 \label{table:avge}
 
 		
-\textbf{To do: say something about how this motivates a problem (MC)
-that emphasizes the parallelizable aspects of the algorithm}
+%\textbf{To do: say something about how this motivates a problem (MC)
+%that emphasizes the parallelizable aspects of the algorithm}
 
-As we have demonstrated, the BITS algorithm is well-suited for counting interval
-intersections, regardless of dataset size or genomic distribution.  While there
-are modest speedups over sequential algorithms for large data sets, Amdahl's
-law~\citep{amdahl1967} states that any improvement from parallelization is
-bounded by  the portion of the code that must be sequential.  This effect is
-shown in Table~\ref{table:avge}.  The main steps for interval intersection are
-reading files into arrays, and intersecting the two arrays (which requires
-sorting and searching).  File I/O is an inherently sequential step and cannot be
-parallelize and therefore dominates the run time as file sizes grow.  While both
-sorting and intersecting can be parallelized, we were unable to find an OpenMP
-sorting algorithm that outperformed the sequential qsort, therefore onl
-searching was done in parallel.  This accounts for the increase in time spent
-intersecting as the input size grows.  In the CUDA, both sorting and searching
-were done in parallel and the proportion of time spent intersecting shrinks as
-file size grows.
+%As we have demonstrated, the BITS algorithm is well-suited for counting interval
+%intersections, regardless of dataset size or genomic distribution.  While there
+%are modest speedups over sequential algorithms for large data sets, Amdahl's
+%law~\citep{amdahl1967} states that any improvement from parallelization is
+%bounded by  the portion of the code that must be sequential.  This effect is
+%shown in Table~\ref{table:avge}.  The main steps for interval intersection are
+%reading files into arrays, and intersecting the two arrays (which requires
+%sorting and searching).  File I/O is an inherently sequential step and cannot be
+%parallelize and therefore dominates the run time as file sizes grow.  While both
+%sorting and intersecting can be parallelized, we were unable to find an OpenMP
+%sorting algorithm that outperformed the sequential qsort, therefore onl
+%searching was done in parallel.  This accounts for the increase in time spent
+%intersecting as the input size grows.  In the CUDA, both sorting and searching
+%were done in parallel and the proportion of time spent intersecting shrinks as
+%file size grows.
+
+%        \begin{enumerate}
+%                \item Simple data structure - array.
+%                \item Binary search - O(log(N))
+%                \item these make it easily portable to parallel architectures, even 
+%                      more complicated archs such as CUDA.
+%                \item we implemented BITS for OpenMP and CUDA (supp. methods).
+%                \item describe scaleups.
+%                \item GPUs - sort, arrays, bsearch.  all things GPUs excel at.
+%        \end{enumerate} 
+%        
+%        \begin{table}[h]
+%        \centering
+%        \begin{center}
+%                \begin{tabular}{l l l l l l}
+%                        Arch. & Size & Total & Intersection & I/O & Speedup \\
+%                        \hline
+%                        \hline
+%                        OpenMP & 10K & 102,769 & 26.7\% & 73.4\% & 1.85 \\
+%                        OpenMP & 100K & 129,344 & 29.4\% & 70.6\% & 1.90 \\
+%                        OpenMP & 1M & 391,332 & 36.4\% & 63.6\% & 1.71 \\
+%                        OpenMP & 10M & 3,352,776 & 44.0\% & 56.0\% & 1.63 \\ 
+%                        \\
+%                        CUDA & 10K & 86,521 & 10.0\% & 90.0\% & 2.21 \\
+%                        CUDA & 100K & 104,697 & 10.3\% & 89.7\% & 2.34 \\
+%                        CUDA & 1M & 272,418 & 8.6\% & 91.4\% & 2.45 \\
+%                        CUDA & 10M & 2,028,921 & 7.1\% & 92.9\% & 2.70 \\
+%                        \\
+%                \end{tabular}
+%        \end{center}
+%        \label{table:avge}
+%        \caption{Average speed and scaleup over sequential algorithm for the counting problem on exons v. exome.}
+%        \end{table}
+%        
         
         % Performing a single operation independently on many different inputs
         % is a classic parallelization scenario.  When based on the subroutine
@@ -831,8 +886,6 @@ file size grows.
         % comparing sequential versions.  We then show the added benefit provided by 
         % BITS using parallel architectures.
         
-        
-
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % RESULTS: Applications for Monte-carlo simulations 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

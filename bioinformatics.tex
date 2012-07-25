@@ -369,17 +369,16 @@ the \emph{count} of intersections in $B$ for $a_i$z):
 Using the subroutine $\textsc{ICount}(B_S,B_E,a_i)$ as the core operation in
 BITS, all four interval set intersection problem variants can be solved
 (pseudocode for the \emph{decision} and \emph{enumeration} sub-problems can be
-found in the Supplemental Materials):
+found in the Supplemental Materials).
 
-\begin{enumerate}
+% \begin{enumerate}
 
 	% \item
 	% {\em Decision problem:} Let $c$ be an accumulator variable that is
 	% initialized to zero; then for each $a_i \in A$, accumulate $c = c +
 	% \textsc{ICount}(B_S,B_E,a_i)$.  If $c\ne0$ return {\em yes}, otherwise
 	% return {\em no}.
-
-	\item {\em Counting problem:}
+	{\em The BITS solution to the counting problem:}
 	Let $c$ be an accumulator variable that is initialized to zero; then for
 	each $a_i \in A$, accumulate $c = c + \textsc{ICount}(B_S,B_E,a_i)$.  The
 	total accumulated count $c$ is returned.
@@ -404,31 +403,31 @@ found in the Supplemental Materials):
 		\caption{Interval intersection counter}
 	\end{algorithm}
 	
-	\item {\em Per-interval counting problem:}
-	Let $C$ be an accumulator array where element $C[i]$ corresponds to the
-	number of intersection for each element in $a_i\in A$.  For each 
-	$a_i \in A$, set $C[i]=\textsc{ICount}(B_S,B_E,a_i)$.  The total list of
-	counts $C$ is then returned.
-	\begin{algorithm}[h]
-		\DontPrintSemicolon
-		\footnotesize
-		\KwIn{Database intervals array $B$ and query intervals array $A$}
-		\KwOut{Array of intersections counts $C$ where $|C|=|A|$}
-		\BlankLine
-		\textbf{Function} \textsc{PerIntervalCounter}$(A,B)$
-		\Begin {
-			$B_S \gets [b_1.start, \dots, b_M.start]$ where $|B| = M$\;
-			$B_E \gets [b_1.end, \dots, b_M.start]$ where $|B| = M$\;
-			\textsc{Sort}($B_S$)\;
-			\textsc{Sort}($B_E$)\;
-			$C \gets [0, \dots, 0]$\;
-			\For{$i \gets 1$ \KwTo $|A|$} {
-				$C[i] \gets \textsc{ICount}(B_S,B_E,A[i])$
-			}
-			\Return $C$\;
-		}
-		\caption{Per interval intersection counter}
-	\end{algorithm}
+	% \item {\em Per-interval counting problem:}
+	% Let $C$ be an accumulator array where element $C[i]$ corresponds to the
+	% number of intersection for each element in $a_i\in A$.  For each 
+	% $a_i \in A$, set $C[i]=\textsc{ICount}(B_S,B_E,a_i)$.  The total list of
+	% counts $C$ is then returned.
+	% \begin{algorithm}[h]
+	% 	\DontPrintSemicolon
+	% 	\footnotesize
+	% 	\KwIn{Database intervals array $B$ and query intervals array $A$}
+	% 	\KwOut{Array of intersections counts $C$ where $|C|=|A|$}
+	% 	\BlankLine
+	% 	\textbf{Function} \textsc{PerIntervalCounter}$(A,B)$
+	% 	\Begin {
+	% 		$B_S \gets [b_1.start, \dots, b_M.start]$ where $|B| = M$\;
+	% 		$B_E \gets [b_1.end, \dots, b_M.start]$ where $|B| = M$\;
+	% 		\textsc{Sort}($B_S$)\;
+	% 		\textsc{Sort}($B_E$)\;
+	% 		$C \gets [0, \dots, 0]$\;
+	% 		\For{$i \gets 1$ \KwTo $|A|$} {
+	% 			$C[i] \gets \textsc{ICount}(B_S,B_E,A[i])$
+	% 		}
+	% 		\Return $C$\;
+	% 	}
+	% 	\caption{Per interval intersection counter}
+	% \end{algorithm}
 
 	% \item
 	% {\em Enumeration problem:} First find the per-interval counting array
@@ -444,7 +443,7 @@ found in the Supplemental Materials):
 	% b_from>$ and $start=start+1$.  Then let $from = from +1$.  Finally, the
 	% total set of intersecting intervals $E$ is returned (\textbf{Algorithm
 	% 4}).
-\end{enumerate}
+% \end{enumerate}
         
 
         % \begin{algorithm}[h]
@@ -521,20 +520,21 @@ b$, counting interval intersections is a {\em pleasingly parallelizable} problem
 that easily maps to a number of parallel architectures.
 
 NVIDIA's Compute Unified Device Architecture (CUDA) is a single instruction
-multiple data (SIMD) architecture that provides programmers a general interface
-to a large number of parallel graphics processing units (GPUs).  The BITS
-algorithm is especially well suited for the NVIDIA CUDA architecture for a
-number of reasons.  First, CUDA is optimized to handle large numbers of threads.
-By assigning each thread one instance of $\textsc{ICount}(B_S,B_E,a)$, the
-number of threads will be proportional to the file size.  CUDA threads also
-execute in lock-step and any divergence between threads will cause reduced
-thread utilization.  While there is some divergence in the depth of each binary
-search performed by $\textsc{ICount}(B_S,B_E,a)$, it has an upper bound of
-$O(log |B|)$.  Outside of this divergence $\textsc{ICount}(B_S,B_E,a)$ is a
-classic SIMD operation~\citep{kirk2010}.  Finally, the only data structure
-required for this algorithm is a sorted array.  Sorting on GPU has been an
-active area of research for many years, and current GPU sorting algorithms can
-sort billions of integers within seconds~\citep{merrill2011}.
+multiple data (SIMD) architecture that provides programmers with 
+a general interface to a large number of parallel graphics processing units 
+(GPUs).  The BITS algorithm is especially well suited for the NVIDIA CUDA 
+architecture for a number of reasons.  First, CUDA is optimized to handle large 
+numbers of threads. By assigning each thread one instance of 
+$\textsc{ICount}(B_S,B_E,a)$, the number of threads will be proportional to the 
+file size.  CUDA threads also execute in lock-step and any divergence between 
+threads will cause reduced thread utilization.  While there is some divergence 
+in the depth of each binary search performed by $\textsc{ICount}(B_S,B_E,a)$, it 
+has an upper bound of $O(log |B|)$.  Outside of this divergence 
+$\textsc{ICount}(B_S,B_E,a)$ is a classic SIMD operation~\citep{kirk2010}.  
+Finally, the only data structure required for this algorithm is a sorted array.  
+Sorting on GPU has been an active area of research for many years, and current 
+GPU sorting algorithms can sort billions of integers within 
+seconds~\citep{merrill2011}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RESULTS
@@ -544,21 +544,20 @@ sort billions of integers within seconds~\citep{merrill2011}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RESULTS: Comparing sequential BITS to existing approaches
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparing sequential BITS to existing approaches}
+\subsection{Comparing a sequential implementation of BITS to existing 
+approaches}
 We implemented a sequential version of the BITS algorithm as a standalone C/C++
-utility using our BEDTools~\citep{quinlan2010} genome arithmetic suite. Here we
-assess the performance of this sequential implementation relative to the
-BEDTOOLS \texttt{intersect} and UCSC Genome Browser's ("UCSC") \citep{kent2002}
-\texttt{bedIntersect} utilities (\textbf{see Suppl. Methods - describe commands,
-how we did timing, what machine, CPU, GPU, startup-time, etc.}).  We compare the
-performance of each tool for \emph{counting} the total number of observed
-intersections between sets of intervals of varying sizes (Figure 2). The
-comparisons presented are based sequence alignment intervals extracted from
-datasets created for the CEU individual NA12878 by the 1000 Genomes
-Project\textbf{TO: CITE}), as well as RefSeq exons (N=400,531). Owing to the
-different data structures used by each algorithm, the relative performance of
-each approach may depend on the genomic distribution of intervals within the
-sets.  For example, tree-based solutions (i.e., BEDTools and UCSC) placing
+utility. Here we assess the performance of this implementation 
+relative to our BEDTOOLS \texttt{intersect} and UCSC Genome Browser's ("UCSC") 
+\citep{kent2002} \texttt{bedIntersect} utilities (see Supplemental Materials for
+details).  We compare the performance of each tool for \emph{counting} the total 
+number of observed intersections between sets of intervals of varying sizes 
+(Figure 2). The comparisons presented are based sequence alignment intervals 
+extracted from datasets created for the CEU individual NA12878 by the 1000 
+Genomes Project\citep{durbin2010}, as well as RefSeq exons (N=400,531). Owing to
+the different data structures used by each algorithm, the relative performance 
+of each approach may depend on the genomic distribution of intervals within the
+sets. For example, tree-based solutions (i.e., BEDTools and UCSC) placing
 intervals into hierarchical bins may perform poorly when intervals are unevenly
 distributed among the bins. To test the effect of differing interval
 distributions on algorithm performance, we randomly sampled 1 and 10 million
@@ -743,24 +742,41 @@ the typically large sequence alignment datasets that these experiments generate.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Applications for Monte Carlo Simulations}
 
-BITS is particularly well suited for Monte Carlo simulations.  The basic process
-for a single intersection begins with data structure setup.  The BITS setup maps
-each interval from the two-dimensional chromosomal intervals space to a single
-dimension integer interval space then sorts the intervals.  The UCSC setup
-places each chromosomal interval into a hash table.  As shown
-Figure~\ref{seq-counting}, setup is a significant portion of the total process.
-In the case of Monte Carlo simulation rounds, where a uniformly distributed
-random interval set is generated and placed into the associated data structure,
-the setup step is faster in BITS while it remains the same for UCSC.  For BITS,
-the mapping step is skipped and only an array of random starts is be generated.
-The result is a 6x speedup for Monte Carlo setup over single intersection setup.
+All aspects of the BITS algorithm are particularly well suited for Monte 
+Carlo (MC) simulations measuring relationships between interval sets. As 
+described, all intersection algorithms begin detecting intersections between two 
+interval sets by setting up their underlying data structures. The BITS setup
+process
+involves mapping each interval from the two-dimensional chromosomal 
+interval space (i.e., chromosome and start/end coordinates) to a one
+dimensional integer interval space (i.e., start/end coordinates ranging from
+1 to the total genome size). Once the intervals are thus mapped, arrays are 
+sorted by either start or end coordinates.  In contrast, the UCSC setup process
+places each chromosomal interval into a hash table.  As shown in
+Figure~\ref{seq-counting}, data structure setup is a significant portion of the 
+total runtime for all approaches. 
+
+However, in the case of many MC simulation rounds, where a uniformly 
+distributed random interval set is generated and placed into the associated data 
+structure, the setup step is faster in BITS, whereas the setup time remains 
+constant in each simulation round for UCSC.  For BITS, the mapping step is
+skipped in all but the the first round and, in each simulation round, 
+only an array of random starts must be generated. The result is a 6x speedup 
+for in MC rounds over the cost of the initial intersection setup.
 For UCSC, both the chromosome and the interval start position must be generated
-and then placed into the hash with no change in execution time.  This speedup is
-extended on parallel platforms, where efficient parallel random number
-generation and parallel sorting algorithms are available.  The improved
-performance of BITS over UCSC in Monte Carlo simulations is showin in
-Table~\ref{table:avge}.  Due to the long runtimes, timings for BITS-SEQ and UCSC
-with set sizes 1e6 and 1e7 and itterations 1000 and 10000 (in itallics) were
+and then placed into the hash table with no change in execution time.
+This speedup in BITS is extended on parallel platforms, where efficient parallel 
+random number generation and parallel sorting algorithms are available.  
+
+\textbf{TO DO: a) present CUDA implementation (MC-CUDA), b) describe observed 
+scaleups, c) state that this motivates the heatmap tools}
+
+We demonstrate the improved performance of BITS over UCSC for Monte Carlo 
+simulations measuring the significant overlaps between interval sets in 
+Table~\ref{table:avge}.  As both the number of MC simulations and the size of the dataset increase, the performance 
+
+Due to the long runtimes, timings for BITS-SEQ and UCSC
+with set sizes 1e6 and 1e7 and iterations 1000 and 10000 (in italics) were
 estimated from their 1e5 times.
 
 \begin{center}
@@ -889,102 +905,103 @@ estimated from their 1e5 times.
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % RESULTS: Applications for Monte-carlo simulations 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        \subsection{Uncovering genomic relationships in large-scale datasets}
-        
-        The efficiency of BITS for Monte Carlo applications on GPU architectures
-        provides a scalable platform for identifying novel relationships between
-        functional and regulatory elements in the genome. To illustrate the 
-        potential that MC-BITS has for large-scale data mining experiments, 
-        we conducted an unbiased screen for significant relationships among
-        161 genome annotation tracks using Monte Carlo simulation (see
-        Supplemental Materials). This analysis was based upon several 
-        functional annotations collected by the ENCODE
-        project~\citep{encode2007} for the GM12878, H1-hESC, and K562 
-        cell lines, including assays for 24 transcriptions factors 
-        (often with replicates), 8 histone
-        modifications, open chromatin, and DNA methylation. We included all of
-        these assays for each cell line, as well as a wide range of existing
-        genome annotations from the UCSC genome browser (e.g, repeats, genes,
-        segmental duplications, and conserved regions).
-        
-        Using MC-BITS, we compared the observed and expected number
-        of intersections for each of the 25,921 pairwise (i.e., 161*161)
-        dataset relationships using 10000 Monte Carlo simulations (Figure 3).
-        As expected, this analysis revealed that 1) the genomic locations 
-        for the same functional element are largely consistent across 
-        replicates and cell types, 2) methylated and semi-methylated regions
-        are similar across cell types, and 3) most functional assays were
-        anti-correlated with genomic repeats (e.g., microsatellites)
-        owing to sequence alignment strategies that exclude repetitive genomic
-        regions. Perhaps not surprisingly, this unbiased screen also revealed
-        intriguing patterns.  First, the strong enrichment among all
-        transcription factors (TF) assays suggests that a subset of TF
-        binding sites are shared among all factors. This observation is 
-        consistent with previous descriptions of so-called "hot regions"
-        ~\citep{gerstein2010}. In addition, there is a significant, 
-        specific, and unexplained enrichment among the Six5 transcription factor
-        and segmental duplications. 
-        
-        Exploring the nature of this and other relationships is beyond the 
-        scope of the current manuscript; however, we emphasize that the ability 
-        to efficiently conduct such large-scale screens facilitates novel 
-        insights into genome biology. This analysis presented a tremendous
-        computational burden that was made feasible by the facility with which
-        the BITS algorithm could be applied to GPU architectures. Indeed, each
-        iteration of our Monte Carlo simulation tested for
-        intersections among 4,425,582,168 intervals among the 25,921 datasets,
-        yielding over 44 trillion comparisons for the entire simulation. Whereas
-        this simulation took just over 6 days (9,069 minutes) on a single
-        computer with one GPU card, we estimate that it would take at least 
-        112 traditional processors to conduct the same analysis using 
-        traditional approaches such as the UCSC tools or BEDTools.
-        
-        \begin{figure}[t]
-                \includegraphics[width=7in,height=9in]{figures/heatmap.eps}
-                \caption[]{Monte-carlo measurements of genomic relationships among 161 datasets (FIXME)}
-        \end{figure}
-        
+\subsection{Uncovering genomic relationships in large-scale datasets}
 
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % CONCLUSION
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        
-     
-        \section{Conclusion}
-        We have developed a novel algorithm for interval intersection that
-        is uniquely suited to scalable computing architectures such as GPUs.
-        Our algorithm takes a new approach to counting intersections: 
-        unlike existing methods that must enumerate intersection in order to 
-        derive a count, BITS uses two binary searches to directly infer the 
-        count by excluding intervals that \emph{cannot} intersect one another. 
-        
-        We have demonstrated that, because of the algorithm's design,
-        a sequential implementation of BITS outperforms existing tools, 
-        especially for very large datasets (e.g., high throughput sequencing) 
-        and datasets with biased 
-        genomic distributions (e.g., ChIP-seq, exome capture, RNA-seq). We also 
-        show that because it is based on binary searches (which have predictable 
-        complexity), BITS is task efficient and is thus highly parallelizable.
-        
-        As such, BITS is a superior solution for Monte 
-        Carlo analyses of statistical relationships between sets of genome
-        intervals, as observed intersections among many sets must be compared to
-        thousands of randomized simulations. Using a GPU implementation of BITS,
-        we highlighted the data mining potential of our approach by 
-        exploring relationships among 161 genome annotations and assays of 
-        functional elements from the ENCODE project.
-        
-        Given the efficiency with which the BITS algorithm counts intersections,
-        it is perfectly suited to many fundamental genomic analyses including 
-        RNA-seq transcript quantification, ChIP-seq peak detection, and 
-        searches for copy-number and structural variation. Moreover, the 
-        functional and regulatory data produced by projects such as ENCODE
-        have driven the development of new approaches~\citep{favorov2012} 
-        to measuring relationships among genomic features in order to reveal yet 
-        undetected insights into genome biology. We recognize the importance of 
-        scalable approaches to detecting such relationships and anticipate that 
-        our new algorithm will foster new genome mining tools for the 
-        genomics community.
+The efficiency of BITS for Monte Carlo applications on GPU architectures
+provides a scalable platform for identifying novel relationships between
+functional and regulatory elements in the genome. To illustrate the 
+potential that MC-BITS has for large-scale data mining experiments, 
+we conducted an unbiased screen for significant relationships among
+161 genome annotation tracks using Monte Carlo simulation (see
+Supplemental Materials). This analysis was based upon several 
+functional annotations collected by the ENCODE
+project~\citep{encode2007} for the GM12878, H1-hESC, and K562 
+cell lines, including assays for 24 transcriptions factors 
+(often with replicates), 8 histone
+modifications, open chromatin, and DNA methylation. We included all of
+these assays for each cell line, as well as a wide range of existing
+genome annotations from the UCSC genome browser (e.g, repeats, genes,
+segmental duplications, and conserved regions).
+
+Using MC-BITS, we compared the observed and expected number
+of intersections for each of the 25,921 pairwise (i.e., 161*161)
+dataset relationships using 10000 Monte Carlo simulations (Figure 3).
+As expected, this analysis revealed that 1) the genomic locations 
+for the same functional element are largely consistent across 
+replicates and cell types, 2) methylated and semi-methylated regions
+are similar across cell types, and 3) most functional assays were
+anti-correlated with genomic repeats (e.g., microsatellites)
+owing to sequence alignment strategies that exclude repetitive genomic
+regions. Perhaps not surprisingly, this unbiased screen also revealed
+intriguing patterns.  First, the strong enrichment among all
+transcription factors (TF) assays suggests that a subset of TF
+binding sites are shared among all factors. This observation is 
+consistent with previous descriptions of so-called "hot regions"
+~\citep{gerstein2010}. In addition, there is a significant, 
+specific, and unexplained enrichment among the Six5 transcription factor
+and segmental duplications. 
+
+Exploring the nature of this and other relationships is beyond the 
+scope of the current manuscript; however, we emphasize that the ability 
+to efficiently conduct such large-scale screens facilitates novel 
+insights into genome biology. This analysis presented a tremendous
+computational burden that was made feasible by the facility with which
+the BITS algorithm could be applied to GPU architectures. Indeed, each
+iteration of our Monte Carlo simulation tested for
+intersections among 4,425,582,168 intervals among the 25,921 datasets,
+yielding over 44 trillion comparisons for the entire simulation. Whereas
+this simulation took just over 6 days (9,069 minutes) on a single
+computer with one GPU card, we estimate that it would take at least 
+112 traditional processors to conduct the same analysis using 
+traditional approaches such as the UCSC tools or BEDTools.
+
+\begin{figure}[t]
+        \includegraphics[width=7in,height=9in]{figures/heatmap.eps}
+        \caption[]{Monte-carlo measurements of genomic relationships 
+among 161 datasets (FIXME)}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONCLUSION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Conclusion}
+We have developed a novel algorithm for interval intersection that
+is uniquely suited to scalable computing architectures such as GPUs.
+Our algorithm takes a new approach to counting intersections: 
+unlike existing methods that must enumerate intersection in order to 
+derive a count, BITS uses two binary searches to directly infer the 
+count by excluding intervals that \emph{cannot} intersect one another. 
+
+We have demonstrated that, because of the algorithm's design,
+a sequential implementation of BITS outperforms existing tools, 
+especially for very large datasets (e.g., high throughput sequencing) 
+and datasets with biased 
+genomic distributions (e.g., ChIP-seq, exome capture, RNA-seq). We also 
+show that because it is based on binary searches (which have predictable 
+complexity), BITS is task efficient and is thus highly parallelizable.
+
+As such, BITS is a superior solution for Monte 
+Carlo analyses of statistical relationships between sets of genome
+intervals, as observed intersections among many sets must be compared to
+thousands of randomized simulations. Using a GPU implementation of BITS,
+we highlighted the data mining potential of our approach by 
+exploring relationships among 161 genome annotations and assays of 
+functional elements from the ENCODE project.
+
+Given the efficiency with which the BITS algorithm counts intersections,
+it is also perfectly suited to many fundamental genomic analyses
+including RNA-seq transcript quantification, ChIP-seq peak detection, and 
+searches for copy-number and structural variation. Moreover, the 
+functional and regulatory data produced by projects such as ENCODE
+have driven the development of new approaches~\citep{favorov2012} 
+to measuring relationships among genomic features in order to reveal yet 
+undetected insights into genome biology. We recognize the importance of 
+scalable approaches to detecting such relationships and anticipate that 
+our new algorithm will foster new genome mining tools for the 
+genomics community.
 
 
 

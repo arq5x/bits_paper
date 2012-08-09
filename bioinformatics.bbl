@@ -1,22 +1,25 @@
 \begin{thebibliography}{}
 
-\bibitem[A.~Favorov(2012)A.~Favorov]{favorov2012}
-A.~Favorov, L.~Mularoni, e.~a. (2012).
-\newblock Exploring massive, genome scale datasets with the genometricorr
-  package.
-\newblock {\em PLoS Comput Biol\/}, {\bf 8}(5).
-
 \bibitem[Alekseyenko and Lee(2007)Alekseyenko and Lee]{alekseyenko2007}
 Alekseyenko, A.~V. and Lee, C.~J. (2007).
 \newblock Nested containment list ({NCList}): a new algorithm for accelerating
   interval query of genome alignment and interval databases.
 \newblock {\em Bioinformatics\/}, {\bf 23}(11), 1386--1393.
 
-\bibitem[ENCODE Project~Consortium(2007)ENCODE Project~Consortium]{encode2007}
-ENCODE Project~Consortium, E.~Birney, e.~a. (2007).
-\newblock Identification and analysis of functional elements in 1% of the human
-  genome by the encode pilot project.
+\bibitem[{ENCODE Project Consortium}(2007){ENCODE Project
+  Consortium}]{encode2007}
+{ENCODE Project Consortium} (2007).
+\newblock Identification and analysis of functional elements in 1\% of the
+  human genome by the encode pilot project.
 \newblock {\em Nature\/}, {\bf 447}(7146), 799--816.
+
+\bibitem[Favorov {\em et~al.}(2012)Favorov, Mularoni, Cope, Medvedeva, Mironov,
+  Makeev, and Wheelan]{favorov2012}
+Favorov, A., Mularoni, L., Cope, L.~M., Medvedeva, Y., Mironov, A.~A., Makeev,
+  V.~J., and Wheelan, S.~J. (2012).
+\newblock Exploring massive, genome scale datasets with the genometricorr
+  package.
+\newblock {\em PLoS Comput Biol\/}, {\bf 8}(5).
 
 \bibitem[Giardine {\em et~al.}(2005)Giardine, Riemer, Hardison, Burhans, L,
   Shah, Zhang, Blankenberg, Albert, Taylor, Miller, Kent, and
@@ -40,17 +43,11 @@ Kirk, D. and Hwu, W. (2010).
   Approach\/}.
 \newblock Elsevier.
 
-\bibitem[Li(2011)Li]{li2011}
-Li, H. (2011).
-\newblock Tabix: Fast retrieval of sequence features from generic
-  {TAB}-delimited files.
-\newblock {\em Bioinformatics\/}, {\bf 27}, 718--719.
-
 \bibitem[Li {\em et~al.}(2009)Li, Handsaker, Wysoker, Fennell, Ruan, Homer,
   Marth, Abecasis, Durbin, and Subgroup]{li2009}
 Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth,
   G., Abecasis, G., Durbin, R., and Subgroup, . G. P. D.~P. (2009).
-\newblock The sequence alignment/map {(SAM)} format and samtools.
+\newblock The sequence alignment/map format and samtools.
 \newblock {\em Bioinformatics\/}, {\bf 25}, 2078--2049.
 
 \bibitem[M.~B.~Gerstein(2010)M.~B.~Gerstein]{gerstein2010}
@@ -58,16 +55,6 @@ M.~B.~Gerstein, Z. J.~Lu, e.~a. (2010).
 \newblock Integrative analysis of the caenorhabditis elegans genome by the
   modencode project.
 \newblock {\em Science\/}, {\bf 330}(6012), 1775--1787.
-
-\bibitem[McKenna {\em et~al.}(2010)McKenna, Hanna, Banks, Sivachenko,
-  Cibulskis, Kernytsky, Garimella, Altshuler, Gabriel, Daly, and
-  DePristo]{mckenna2010}
-McKenna, A., Hanna, M., Banks, E., Sivachenko, A., Cibulskis, K., Kernytsky,
-  A., Garimella, K., Altshuler, D., Gabriel, S., Daly, M., and DePristo, M.~A.
-  (2010).
-\newblock The genome analysis toolkit: a mapreduce framework for analyzing
-  next-generation dna sequencing data.
-\newblock {\em Genome Research\/}, {\bf 20}(9), 1297--1303.
 
 \bibitem[McKenney and McGuire(2009)McKenney and McGuire]{mckenney2009}
 McKenney, M. and McGuire, T. (2009).
@@ -112,11 +99,16 @@ Richardson, J.~E. (2006).
 \newblock Fjoin: simple and efficient computation of feature overlaps.
 \newblock {\em Journal of Computational Biology\/}, {\bf 13}, 1457--1464.
 
-\bibitem[Robinson {\em et~al.}(2011)Robinson, Thorvaldsdóttir, Winckler,
-  Guttman, Lander, Getz, and Mesirov]{robinson2011}
-Robinson, J.~T., Thorvaldsdóttir, H., Winckler, W., Guttman, M., Lander,
-  E.~S., Getz, G., and Mesirov, J.~P. (2011).
-\newblock Integrative genomics viewer.
-\newblock {\em Nature Biotechnology\/}, {\bf 29}, 24--26.
+\bibitem[Satish {\em et~al.}(2009)Satish, Harris, and Garland]{satish2009}
+Satish, N., Harris, M., and Garland, M. (2009).
+\newblock Designing efficient sorting algorithms for manycore gpus.
+\newblock In {\em International Symposium on Parallel and Distributed
+  Processing, 2009\/}, IPDPS '09, pages 1--10. IEEE.
+
+\bibitem[Tzeng and Wei(2008)Tzeng and Wei]{tzeng2008}
+Tzeng, S. and Wei, L. (2008).
+\newblock Parallel white noise generation on a gpu via cryptographic hash.
+\newblock In {\em Proceedings of the 2008 Symposium on Interactive 3D Graphics
+  and Games\/}, I3D '08, pages 79--87, New York, NY, USA. ACM.
 
 \end{thebibliography}

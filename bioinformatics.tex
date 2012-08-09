@@ -191,7 +191,7 @@ R-trees. This approach partitions intervals from one dataset into
 hierarchical ``bins''.  Intervals from a second dataset are then compared solely
 to matching bins (instead of the entire dataset) in order to narrow the search
 for intersections to a focused portion of the genome.  While this popular
-approach is used by the UCSC Genome Browse, BEDTools~\citep{quinlan2010},
+approach is used by the UCSC Genome Browser, BEDTools~\citep{quinlan2010},
 and SAMTOOLS~\citep{li2009}, the algorithm is inefficient for counting 
 intersections since all intervals in each candidate bin must be
 \emph{enumerated} in order to count the intersections.
@@ -284,16 +284,16 @@ typical in genomic datasets, a naive binary search solution is inviable.
 		\centering
 		\includegraphics[width=3in]{figures/Figure1.v3.eps}
 		\caption{Comparing a naive binary search for interval 
-		intersection to the BITS two binary search approach. \textbf{A}. Binary
-		searches of database intervals sorted by start coordinate will
-		occasionally identify overlapping intervals. However, because of 
-		contained intervals, one does not know how far one must scan 
-		the database to identify all intersections. \textbf{B}. Moreover,
-		contained intervals often cause single binary searches to 
+		intersection to the BITS approach. \textbf{A}. Binary
+		searches of intervals sorted by start coordinate will
+		occasionally identify overlapping intervals. However,  
+		contained intervals prevent knowing how far one must scan 
+		the database to identify all intersections. \textbf{B}. Contained 
+		intervals also cause single binary searches to 
 		falsely conclude that no intersections exist for a given query 
-		interval.  \textbf{C}. To overcome these limitations, the BITS
-		algorithm uses two binary searches of the database intervals: one
-		into a sorted list of database end coordinates and the other into a
+		interval.  \textbf{C}. To overcome these limitations, BITS
+		uses two binary searches of the database intervals: one
+		into a sorted list of end coordinates and the other into a
 		sorted list of start coordinates. Each search excludes database
 		intervals that \emph{cannot} intersect the query, leaving solely the
 		intervals that \emph{must} intersect the query.}
@@ -625,20 +625,20 @@ nearly all sequencing intervals will intersect an exon.
 
 \begin{figure*}[btp]
 	\centering
-	\includegraphics[width=6in]{figures/seq-counting.eps}
+	\includegraphics[width=6.5in]{figures/seq-counting.eps}
 	\caption[]{Run times for counting intersections with 
 	BITS, BEDTools, and UCSC ``Kent source''.  \textbf{A}. Run times for
 databases of 1 million alignment intervals from each interval distribution.
 	\textbf{B}.  Run times for databases of 10 million alignment intervals from
-	each interval distribution.  In each case, the bars reflect the mean run
+	each interval distribution.  Bars reflect the mean run
 	time from five independent experiments and error bars describe the standard
-	deviation.  Gray bars reflect the portion of the run time consumed by
-	constructing the data structures required for intersection, while white bars
-	indicate the time spent on counting intersections.  Above each BITS
+	deviation.  Gray bars reflect the run time consumed by
+	data structure construction, while white bars
+	are the time spent counting intersections.  Above each BITS
 	execution time we note the speed increase relative to BEDTools and 
 	``Kent source'', respectively. ``Exons'' represents 400,351 RefSeq exons
 	(autosomal and X, Y) for the human genome (Build 37).  BED = BEDTools; UCSC
-	= ``Kent source''}.
+	= ``Kent source''.}
 	\label{seq-counting}
 \end{figure*}
 
@@ -672,7 +672,7 @@ superior runtime performance for counting intersections.  BITS was between 11.2
 and 27.9 times faster than BEDTools and between 1.2 and 5.2 times faster than
 UCSC (Figure~\ref{seq-counting}). This behavior is expected; whereas the
 BEDTools and UCSC tree-based algorithms must \emph{enumerate} intersections
-to derive the \emph{count}, BITS \emph{infer} the intersection count by 
+to derive the \emph{count}, BITS \emph{infers} the intersection count by 
 exclusion without enumeration.
 
 \subsubsection{BITS excels at large intersections and biased distributions.}
@@ -818,8 +818,8 @@ involves mapping each interval from the two-dimensional chromosomal interval
 space (i.e., chromosome and start/end coordinates) to a one dimensional integer
 interval space (i.e., start/end coordinates ranging from 1 to the total genome
 size). Once the intervals are mapped, arrays are sorted by either start or
-end coordinates.  In contrast, the UCSC setup process places each chromosomal
-interval into a hash table.  As shown in Figure~\ref{seq-counting}, data
+end coordinates.  In contrast, the UCSC setup places each interval into a hash 
+table.  As shown in Figure~\ref{seq-counting}, data
 structure setup is a significant portion of the total runtime for all
 approaches. 
 
@@ -866,23 +866,19 @@ faster than BITS-SEQ and 3,414x faster than sequential UCSC.
 \begin{center}
 	
 	\begin{table}[h!b!p!]
-	\caption{Speed comparison for Monte Carlo simulations across
-	differing dataset sizes and simulation rounds. Timings in italics were 
-	extrapolated owing to long run times.}
+	\caption{Runtime (seconds) comparison for Monte Carlo simulations. 
+	Timings in italics were extrapolated owing to long run times.}
 	\begin{tabular}{l l c c c c}
-	\multicolumn{2}{c}{} & \multicolumn{4}{c}{Time (s) for MC iterations} \\
+	\multicolumn{2}{c}{} & \multicolumn{4}{c}{Number of MC iterations} \\
 	\cline{3-6}
 	Size & Tool & 1 & 100 & 1000 & 100000 \\
-	\hline
 	\hline
 	1e5 & BITS-CUDA & 0.73 & 1  & 4   & 28 \\
 		& BITS-SEQ  & 0.41 & 7  & 68  & 680 \\
 		& UCSC      & 0.17 & 14 & 138 & 1,381 \\
-	\\
 	1e6 & BITS-CUDA & 2 & 3    & 1       & 103 \\
 		& BITS-SEQ  & 5 & 120  & \emph{1,200} & \emph{12,000} \\
 		& UCSC      & 6 & 878  & \emph{8,780} & \emph{87,800} \\
-	\\
 	1e7 & BITS-CUDA & 14  & 22    & 97            & 835 \\
 		& BITS-SEQ  & 66  & 2,235  & \emph{22,350}  & \emph{223,500} \\
 		& UCSC      & 568 & 28,508 & \emph{285,080} & \emph{2,850,800} \\
@@ -1043,9 +1039,9 @@ computer with one GPU card, we estimate that it would take at least
 112 traditional processors to conduct the same analysis using 
 traditional approaches such as the UCSC tools or BEDTools.
 
-\begin{figure*}[t]
-        \includegraphics[width=7in,height=8in]{figures/heatmap.eps}
-        \caption[]{MC-CUDA measurements of spatial correlations
+\begin{figure*}[btp]
+        \includegraphics[width=7in,height=7.5in]{figures/heatmap.eps}
+        \caption[]{BITS-CUDA measurements of spatial correlations
 among 161 genome features from the ENCODE project and from the UCSC
 Genome Browser.}
 \end{figure*}

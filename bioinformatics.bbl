@@ -1,10 +1,22 @@
 \begin{thebibliography}{}
 
+\bibitem[A.~Favorov(2012)A.~Favorov]{favorov2012}
+A.~Favorov, L.~Mularoni, e.~a. (2012).
+\newblock Exploring massive, genome scale datasets with the genometricorr
+  package.
+\newblock {\em PLoS Comput Biol\/}, {\bf 8}(5).
+
 \bibitem[Alekseyenko and Lee(2007)Alekseyenko and Lee]{alekseyenko2007}
 Alekseyenko, A.~V. and Lee, C.~J. (2007).
 \newblock Nested containment list ({NCList}): a new algorithm for accelerating
   interval query of genome alignment and interval databases.
 \newblock {\em Bioinformatics\/}, {\bf 23}(11), 1386--1393.
+
+\bibitem[ENCODE Project~Consortium(2007)ENCODE Project~Consortium]{encode2007}
+ENCODE Project~Consortium, E.~Birney, e.~a. (2007).
+\newblock Identification and analysis of functional elements in 1% of the human
+  genome by the encode pilot project.
+\newblock {\em Nature\/}, {\bf 447}(7146), 799--816.
 
 \bibitem[Giardine {\em et~al.}(2005)Giardine, Riemer, Hardison, Burhans, L,
   Shah, Zhang, Blankenberg, Albert, Taylor, Miller, Kent, and
@@ -22,12 +34,30 @@ Kent, W.~J., Sugnet, C.~W., Furey, T.~S., Roskin, K.~M., Pringle, T.~H.,
 \newblock The human genome browser at {UCSC}.
 \newblock {\em Genome Research\/}, {\bf 12}(6), 996--1006.
 
+\bibitem[Kirk and Hwu(2010)Kirk and Hwu]{kirk2010}
+Kirk, D. and Hwu, W. (2010).
+\newblock {\em Programming Massively Parallel Processors: A Hands-On
+  Approach\/}.
+\newblock Elsevier.
+
+\bibitem[Li(2011)Li]{li2011}
+Li, H. (2011).
+\newblock Tabix: Fast retrieval of sequence features from generic
+  {TAB}-delimited files.
+\newblock {\em Bioinformatics\/}, {\bf 27}, 718--719.
+
 \bibitem[Li {\em et~al.}(2009)Li, Handsaker, Wysoker, Fennell, Ruan, Homer,
   Marth, Abecasis, Durbin, and Subgroup]{li2009}
 Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth,
   G., Abecasis, G., Durbin, R., and Subgroup, . G. P. D.~P. (2009).
 \newblock The sequence alignment/map {(SAM)} format and samtools.
 \newblock {\em Bioinformatics\/}, {\bf 25}, 2078--2049.
+
+\bibitem[M.~B.~Gerstein(2010)M.~B.~Gerstein]{gerstein2010}
+M.~B.~Gerstein, Z. J.~Lu, e.~a. (2010).
+\newblock Integrative analysis of the caenorhabditis elegans genome by the
+  modencode project.
+\newblock {\em Science\/}, {\bf 330}(6012), 1775--1787.
 
 \bibitem[McKenna {\em et~al.}(2010)McKenna, Hanna, Banks, Sivachenko,
   Cibulskis, Kernytsky, Garimella, Altshuler, Gabriel, Daly, and
@@ -52,11 +82,30 @@ Merrill, D. and Grimshaw, A. (2011).
   implementing dynamic parallelism for {GPU} computing.
 \newblock {\em Parallel Processing Letters\/}, {\bf 21}(3), 245--272.
 
+\bibitem[Mirsa and Gries(1982)Mirsa and Gries]{misra1982}
+Mirsa, J. and Gries, D. (1982).
+\newblock Finding repeated elements.
+\newblock {\em Science of Computer Programming\/}, {\bf 2}, 143--152.
+
+\bibitem[Neph {\em et~al.}(2012)Neph, Kuehn, Reynolds, Haugen, Thurman,
+  Johnson, Rynes, Maurano, Vierstra, Thomas, Sandstrom, Humbert, and
+  Stamatoyannopoulos]{neph2012}
+Neph, S., Kuehn, M.~S., Reynolds, A.~P., Haugen, E., Thurman, R.~E., Johnson,
+  A.~K., Rynes, E., Maurano, M.~T., Vierstra, J., Thomas, S., Sandstrom, R.,
+  Humbert, R., and Stamatoyannopoulos, J.~A. (2012).
+\newblock {BEDOPS}: High performance genomic feature operations.
+\newblock {\em Bioinformatics\/}, {\bf 28}, 1919--1920.
+
 \bibitem[Quinlan and Hall(2011)Quinlan and Hall]{quinlan2010}
 Quinlan, A.~R. and Hall, I.~M. (2011).
 \newblock {BEDTools}: a flexible suite of utilities for comparing genomic
   features.
 \newblock {\em Bioinformatics\/}, {\bf 26}(6), 841--842.
+
+\bibitem[R.~M.~Durbin(2010)R.~M.~Durbin]{durbin2010}
+R.~M.~Durbin, D. L.~Altschuler, e.~a. (2010).
+\newblock A map of human genome variation from population-scale sequencing.
+\newblock {\em Nature\/}, {\bf 467}(7319), 1061--1073.
 
 \bibitem[Richardson(2006)Richardson]{richardson2006}
 Richardson, J.~E. (2006).

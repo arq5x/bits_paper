@@ -282,7 +282,7 @@ typical in genomic datasets, a naive binary search solution is inviable.
 
 \begin{figure}[h]
 		\centering
-		\includegraphics[width=3in]{figures/Figure1.v3.eps}
+		\includegraphics[width=3in]{Figure1.v3.eps}
 		\caption{Comparing a naive binary search for interval 
 		intersection to the BITS approach. \textbf{A}. Binary
 		searches of intervals sorted by start coordinate will
@@ -625,7 +625,7 @@ nearly all sequencing intervals will intersect an exon.
 
 \begin{figure*}[btp]
 	\centering
-	\includegraphics[width=6.5in]{figures/seq-counting.eps}
+	\includegraphics[width=6.5in]{seq-counting.eps}
 	\caption[]{Run times for counting intersections with 
 	BITS, BEDTools, and UCSC ``Kent source''.  \textbf{A}. Run times for
 databases of 1 million alignment intervals from each interval distribution.
@@ -1040,10 +1040,15 @@ computer with one GPU card, we estimate that it would take at least
 traditional approaches such as the UCSC tools or BEDTools.
 
 \begin{figure*}[btp]
-        \includegraphics[width=7in,height=7.5in]{figures/heatmap.eps}
+        \includegraphics[width=7in,height=7in]{heatmap_matrix_nolabels_10000iterations.eps}
         \caption[]{BITS-CUDA measurements of spatial correlations
 among 161 genome features from the ENCODE project and from the UCSC
-Genome Browser.}
+Genome Browser. For each comparison, we show an enrichment score
+reflecting the log2 ratio of the observed count of intersections over
+the median count of intersections from 10000 MC simulations. Each set of three
+labels on the X and Y axes correspond to three consecutive rows or columns,
+respectively. Assays from the GM12878 cell line are in green, H1-hESC in blue,
+and K562 in red.  Annotation tracks from the UCSC Genome Browser are in black.}
 \end{figure*}
 
 

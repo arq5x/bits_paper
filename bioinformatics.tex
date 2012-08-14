@@ -43,7 +43,7 @@ Genomics, University of Virginia, Charlottesville, VA}
 The comparison of diverse genomic datasets is fundamental to
 understanding genome biology.
 Researchers must explore many large datasets of genome intervals (e.g., genes,
-sequence alignments) to place their experiments in a
+sequence alignments) to place their experimental results in a
 broader context and to make new discoveries.  Relationships between genomic
 datasets are typically measured by identifying intervals
 that intersect: that is, they overlap and thus share a common genome interval.
@@ -336,7 +336,7 @@ starting after (``right of'', set $\mathcal{R}$ below) $a_i$ ends.  That is:
   \begin{split}
       \mathcal{L}(B,a_i) = &\{b\in B| b.end < a_i.start\} \\
       \mathcal{R}(B,a_i) = &\{b\in B| b.start > a_i.end\} \\
-      \mathcal{I}(B,a_i) = &B / (\mathcal{L}(B,a_i) \cup \mathcal{R}(B,a_i))
+      \mathcal{I}(B,a_i) = &B \setminus (\mathcal{L}(B,a_i) \cup \mathcal{R}(B,a_i))
   \end{split}
 \end{equation*}
 

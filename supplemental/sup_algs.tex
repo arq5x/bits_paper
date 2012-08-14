@@ -2,7 +2,11 @@
     initialized to zero; then for each $a_i \in A$, accumulate $c = c +
     \textsc{ICount}(B_S,B_E,a_i)$.  If $c\ne0$ return {\em yes}, otherwise
     return {\em no}.
-
+\\
+\\
+\textbf{TODO: Note that there is no accumulator c in the algorithm.  Needs to
+be consistent.}
+\\
 	 \begin{algorithm}[h!]
 		\label{Decision}
 	 	\DontPrintSemicolon
@@ -68,7 +72,13 @@ the per-interval counting array
 	an intersection with $a_i$.  If $a_i$ intersections $b_from$ then let
 	$E[start] = <a_i, b_from>$ and $start=start+1$.  Then let $from = from +1$.
 	Finally, the total set of intersecting intervals $E$ is returned.
-        
+    
+    \\
+    \\
+    \textbf{TODO: Fiddle with the TEX such that the algorithm comes before
+    the start of section 2.}
+    \\
+    
 	 \begin{algorithm}[h!]
 		   \DontPrintSemicolon
 		   \footnotesize

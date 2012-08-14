@@ -2,7 +2,7 @@
 Considering that UCSC {\tt bedIntersect} does not support Monte Carlo (MC)
 simulations, modifications to the UCSC source were required.  MC simulations
 consist of many rounds of uniformity distributed random interval sets, and
-{\tt bedIntersect} only supports reading two from disk and reporting the
+{\tt bedIntersect} only supports reading two files from disk and reporting the
 intersections.  One option to add MC simulation support was to first generate
 random sets using a existing tool (e.g., BEDTools {\tt suffelBed} ), then use
 the unmodified UCSC {\tt bedIntersect} to operate on those random sets.  We
@@ -20,3 +20,9 @@ The number of MC rounds is also controlled by a command line parameter.
 Since most of the comparisons in an MC simulation are randomly generated, and
 the number file IO operations is low , we determined that walltime was the
 best timing mechanism.
+
+
+\\
+\\
+\textbf{TODO: Source code for these times is available at: ???.}
+\\

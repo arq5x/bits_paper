@@ -1,0 +1,103 @@
+\subsection {{\em Decision problem}~(Algorithm~\ref{Decision}):} Let $c$ be an accumulator variable that is
+    initialized to zero; then for each $a_i \in A$, accumulate $c = c +
+    \textsc{ICount}(B_S,B_E,a_i)$.  If $c\ne0$ return {\em yes}, otherwise
+    return {\em no}.
+
+	 \begin{algorithm}[h!]
+		\label{Decision}
+	 	\DontPrintSemicolon
+	 	\footnotesize
+	 	\KwIn{Database intervals array $B$ and query intervals array $A$}
+	 	\KwOut{{\em yes} if there is an intersection, otherwise {\em no}}
+	 	\BlankLine
+	 	\textbf{Function} \textsc{Decision}$(A,B)$
+	 	\Begin {
+	 		$B_S \gets [b_1.start, \dots, b_{|B|}.start]$;
+	 		$B_E \gets [b_1.end, \dots, b_{|B|}.start]$;
+	 		\textsc{Sort}($B_S$)\;
+	 		\textsc{Sort}($B_E$)\;
+	 		\For{$i \gets 1$ \KwTo $|A|$} {
+	 			\If {$\textsc{ICount}(B_S,B_E,A[i]) > 0$} {
+					\Return {\em yes};
+				}
+	 		}
+	 		\Return {\em no};
+	 	}
+	 	\caption{Per interval intersection counter}
+	 \end{algorithm}
+
+
+\subsection {{\em Per-interval counting problem}
+	(Algorithm~\ref{PerIntervalCounter}):}
+	 Let $C$ be an accumulator array where element $C[i]$ corresponds to the
+	 number of intersection for each element in $a_i\in A$.  For each 
+	 $a_i \in A$, set $C[i]=\textsc{ICount}(B_S,B_E,a_i)$.  The total list of
+	 counts $C$ is then returned.
+
+	 \begin{algorithm}[h!]
+	 	\DontPrintSemicolon
+	 	\footnotesize
+	 	\KwIn{Database intervals array $B$ and query intervals array $A$}
+	 	\KwOut{Array of intersections counts $C$ where $|C|=|A|$}
+	 	\BlankLine
+	 	\textbf{Function} \textsc{PerIntervalCounter}$(A,B)$
+	 	\Begin {
+	 		$B_S \gets [b_1.start, \dots, b_{|B|}.start]$;
+	 		$B_E \gets [b_1.end, \dots, b_{|B|}.start]$;
+	 		\textsc{Sort}($B_S$)\;
+	 		\textsc{Sort}($B_E$)\;
+	 		$C \gets [0, \dots, 0]$\;
+	 		\For{$i \gets 1$ \KwTo $|A|$} {
+	 			$C[i] \gets \textsc{ICount}(B_S,B_E,A[i])$
+	 		}
+	 		\Return $C$\;
+	 	}
+	 	\caption{Per interval intersection counter}
+		\label{PerIntervalCounter}
+	 \end{algorithm}
+
+\subsection{{\em Enumeration problem} (Algorithm~\ref{Enumerator}):} First find
+the per-interval counting array
+	 $C=\textsc{PerIntervalCounter}(A,B)$ then the let $R$ be the prefix sum
+	 of $C$. The array $R$ is used to track the number of intervals that must be
+	found in each of the subsequent scans.  Let $start = 0$ track the number of
+	enumerated intersections.  For $i=1\dots|A|$, let $end = R[i]$ where $end -
+	start$ is the number intervals in $B$ that intersect $a_i$.  Let
+	$from=\textsc{BSearch}(B_S, a_i.end)$ be the initial position of the scan.
+	While $end - start > 0$ some number of intervals in $B$ must be scanned for
+	an intersection with $a_i$.  If $a_i$ intersections $b_from$ then let
+	$E[start] = <a_i, b_from>$ and $start=start+1$.  Then let $from = from +1$.
+	Finally, the total set of intersecting intervals $E$ is returned.
+        
+	 \begin{algorithm}[h!]
+		   \DontPrintSemicolon
+		   \footnotesize
+		   \KwIn{Database intervals array $B$ and query intervals array
+		   $A$} \KwOut{Array of pair-wise intersections $E$ }
+		   \BlankLine
+		   \textbf{Function} \textsc{Enumerator}$(A,B)$
+		   \Begin {
+		   $B_S \gets [b_1.start, \dots, b_{|B|}.start]$;
+		   $B_E \gets [b_1.end, \dots, b_{|B|}.start]$;
+		   \textsc{Sort}($B_S$)\;
+		   \textsc{Sort}($B_E$)\;
+		   $C \gets \textsc{PerIntervalCounter}(A,B)$\;
+		   $R \gets \textsc{PrefixSum}(C)$\;
+		   $E \gets [<0,0>, \dots, <0,0>]$\;
+		   $start \gets 0$\;
+		   \For{$i \gets 1$ \KwTo $|A|$} {
+		   $end \gets R[i]$\;
+		   $from \gets \textsc{BSearch}(B_S, A[i].end)$\;
+		   \While{$end - start > 0$}{
+		   \If{ $A[i]$ intersects $B[from]$}{
+		   $E[start] = <A[i], B[from]>$\;
+		   $start \gets start + 1$\;
+		   }               
+		   $from \gets from - 1$\;
+		   }
+		   }
+		   \Return $E$\;
+		   }
+		   \caption{Intersection enumerator}
+			\label{Enumerator}
+	 \end{algorithm}

@@ -1,0 +1,22 @@
+\subsection{Monte Carlo Simulation Comparison}
+Considering that UCSC {\tt bedIntersect} does not support Monte Carlo (MC)
+simulations, modifications to the UCSC source were required.  MC simulations
+consist of many rounds of uniformity distributed random interval sets, and
+{\tt bedIntersect} only supports reading two from disk and reporting the
+intersections.  One option to add MC simulation support was to first generate
+random sets using a existing tool (e.g., BEDTools {\tt suffelBed} ), then use
+the unmodified UCSC {\tt bedIntersect} to operate on those random sets.  We
+determined this solution would scale because of the time spent reading and
+writing these sets.  Instead we replaced the function in {\tt bedIntersect} that
+read interval sets from disk with a function that generates two random interval
+sets.  All subsequent intersection code remained the same.  To generate the
+random interval set, first a random number was generated to determine the
+chromosome.  The likelihood of selecting a particular chromosome is equal the
+the proportional size of the chromosome in its genome.  The next random number
+represents the staring position of the interval within the chromosome, and the
+end position is determined by the fixed size given as a command line option.
+The number of MC rounds is also controlled by a command line parameter.
+
+Since most of the comparisons in an MC simulation are randomly generated, and
+the number file IO operations is low , we determined that walltime was the
+best timing mechanism.

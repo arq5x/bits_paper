@@ -1,0 +1,12 @@
+\subsection{Counting Comparison}
+To compare BITS with BEDTOOLS {\tt intersect} and UCSC Genome Browser’s
+(``UCSC'') {\tt bedIntersect}, we used internal timers based on the standard C
+library function {\tt gettimeofday()}.  Since BEDTOOLS and BITS perform more
+sanity checks on input files than {\tt bedIntersection}, wall-time would
+unfairly penalize BEDTOOLS and BITS.  Furthermore, since {\tt bedIntersect} only
+supports enumeration, the output volume of {\tt bedIntersect} can be much larger
+than BITS (which reports a single number) and wall-time would unfairly penalize
+{\tt bedIntersect}.  To exclude these differences from the results, we added
+timers to the source coude of the BEDTOOLS {\tt intersect} and 
+{\tt bedIntersect} source code to ensure that file input was not included in the
+reported execution time, and all file output commands were commented out.

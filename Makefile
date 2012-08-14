@@ -15,6 +15,8 @@ all: $(MPS)
 	latex $(MAIN).tex
 	dvipdf -dAutoRotatePages=/None $(MAIN).dvi
 
+# make the supplement
+	@$(MAKE) --no-print-directory --directory=supplemental/
 
 
 clean:

@@ -98,13 +98,13 @@ Richardson, J.~E. (2006).
 
 \bibitem[Satish {\em et~al.}(2009)Satish, Harris, and Garland]{satish2009}
 Satish, N., Harris, M., and Garland, M. (2009).
-\newblock Designing efficient sorting algorithms for many core GPUs.
+\newblock Designing efficient sorting algorithms for manycore gpus.
 \newblock In {\em International Symposium on Parallel and Distributed
   Processing, 2009\/}, IPDPS '09, pages 1--10. IEEE.
 
 \bibitem[Tzeng and Wei(2008)Tzeng and Wei]{tzeng2008}
 Tzeng, S. and Wei, L. (2008).
-\newblock Parallel white noise generation on a GPU via cryptographic hash.
+\newblock Parallel white noise generation on a gpu via cryptographic hash.
 \newblock In {\em Proceedings of the 2008 Symposium on Interactive 3D Graphics
   and Games\/}, I3D '08, pages 79--87, New York, NY, USA. ACM.
 

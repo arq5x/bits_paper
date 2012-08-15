@@ -848,8 +848,9 @@ This speedup in BITS is extended on parallel platforms, where the independence
 of each intersection is combined with efficient parallel random number
 generation algorithms ~\citep{tzeng2008} and parallel sorting
 algorithms~\citep{merrill2011,satish2009}.  Monte Carlo simulations have obvious
-task parallelism since each round is independent.  BITS running on CUDA goes a
-step further and exposes fine-grain parallelism in both the setup step, with
+task parallelism since each round is independent.  BITS running on CUDA 
+("BITS-CUDA") goes a step further and exposes fine-grain parallelism in both the 
+setup step, with
 parallel random number generation and parallel sorting, and the intersection
 step where hundreds of intersections execute in parallel.  The improvement is
 modest for a single intersection (only parallel sorting can be applied to the

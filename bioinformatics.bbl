@@ -1,25 +1,22 @@
 \begin{thebibliography}{}
 
+\bibitem[A.~Favorov(2012)A.~Favorov]{favorov2012}
+A.~Favorov, L.~Mularoni, e.~a. (2012).
+\newblock Exploring massive, genome scale datasets with the genometricorr
+  package.
+\newblock {\em PLoS Comput Biol\/}, {\bf 8}(5).
+
 \bibitem[Alekseyenko and Lee(2007)Alekseyenko and Lee]{alekseyenko2007}
 Alekseyenko, A.~V. and Lee, C.~J. (2007).
 \newblock Nested containment list ({NCList}): a new algorithm for accelerating
   interval query of genome alignment and interval databases.
 \newblock {\em Bioinformatics\/}, {\bf 23}(11), 1386--1393.
 
-\bibitem[{ENCODE Project Consortium}(2007){ENCODE Project
-  Consortium}]{encode2007}
-{ENCODE Project Consortium} (2007).
-\newblock Identification and analysis of functional elements in 1\% of the
-  human genome by the encode pilot project.
+\bibitem[ENCODE Project~Consortium(2007)ENCODE Project~Consortium]{encode2007}
+ENCODE Project~Consortium, E.~Birney, e.~a. (2007).
+\newblock Identification and analysis of functional elements in 1% of the human
+  genome by the encode pilot project.
 \newblock {\em Nature\/}, {\bf 447}(7146), 799--816.
-
-\bibitem[Favorov {\em et~al.}(2012)Favorov, Mularoni, Cope, Medvedeva, Mironov,
-  Makeev, and Wheelan]{favorov2012}
-Favorov, A., Mularoni, L., Cope, L.~M., Medvedeva, Y., Mironov, A.~A., Makeev,
-  V.~J., and Wheelan, S.~J. (2012).
-\newblock Exploring massive, genome scale datasets with the genometricorr
-  package.
-\newblock {\em PLoS Comput Biol\/}, {\bf 8}(5).
 
 \bibitem[Giardine {\em et~al.}(2005)Giardine, Riemer, Hardison, Burhans, L,
   Shah, Zhang, Blankenberg, Albert, Taylor, Miller, Kent, and
@@ -47,7 +44,7 @@ Kirk, D. and Hwu, W. (2010).
   Marth, Abecasis, Durbin, and Subgroup]{li2009}
 Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth,
   G., Abecasis, G., Durbin, R., and Subgroup, . G. P. D.~P. (2009).
-\newblock The sequence alignment/map format and samtools.
+\newblock The sequence alignment/map {(SAM)} format and samtools.
 \newblock {\em Bioinformatics\/}, {\bf 25}, 2078--2049.
 
 \bibitem[M.~B.~Gerstein(2010)M.~B.~Gerstein]{gerstein2010}
@@ -101,13 +98,13 @@ Richardson, J.~E. (2006).
 
 \bibitem[Satish {\em et~al.}(2009)Satish, Harris, and Garland]{satish2009}
 Satish, N., Harris, M., and Garland, M. (2009).
-\newblock Designing efficient sorting algorithms for manycore gpus.
+\newblock Designing efficient sorting algorithms for many core GPUs.
 \newblock In {\em International Symposium on Parallel and Distributed
   Processing, 2009\/}, IPDPS '09, pages 1--10. IEEE.
 
 \bibitem[Tzeng and Wei(2008)Tzeng and Wei]{tzeng2008}
 Tzeng, S. and Wei, L. (2008).
-\newblock Parallel white noise generation on a gpu via cryptographic hash.
+\newblock Parallel white noise generation on a GPU via cryptographic hash.
 \newblock In {\em Proceedings of the 2008 Symposium on Interactive 3D Graphics
   and Games\/}, I3D '08, pages 79--87, New York, NY, USA. ACM.
 

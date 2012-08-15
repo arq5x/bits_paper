@@ -60,7 +60,7 @@ its utility for efficient Monte-Carlo simulations measuring the significance of
 relationships between sets of genomic intervals.
 
 \section{Availability:}
-\href{http://bedtools.googlecode.com}{http://bedtools.googlecode.com}
+\href{https://github.com/arq5x/bits}{https://github.com/arq5x/bits}
 
 \section{Contact:} arq5x@virginia.edu
 \end{abstract}
@@ -378,13 +378,13 @@ query interval $a_i$.  As shown in Fig. 1C, the database $B$ is split into two
 integer lists $B_S = [b_1.start, b_2.start, \dots, b_M.start]$ and $B_E = 
 [b_1.end, b_2.end, \dots, b_M.end]$, which are each sorted numerically in 
 ascending order.  Next, two binary searches are performed, 
-$last=\textsc{ BSearch}(B_E, a_i.start)$ and 
-$first=\textsc{ BSearch}(B_S, a_i.end)$.  Since $B_E$ is a sorted list of each
-interval end coordinate in $B$, the elements less than or equal to $last$ in
-$B_E$ correspond to the set of intervals in $B$ that end \emph{before} $a_i$
-starts (i.e., to the ``left'' of $a_i$).  Similarly, the elements greater than
-or equal to $first$ in $B_S$ correspond to the set of intervals in $B$ that
-start \emph{after} $a_i$ ends (i.e., to the ``right'' of $a_i$).  From these two
+$last=\textsc{ BSearch}(B_E, a_i.start)$ and $first=\textsc{ BSearch}(B_S,
+a_i.end)$.  Since $B_E$ is a sorted list of each interval end coordinate in $B$,
+the elements with indices less than or equal to $last$ in $B_E$ correspond to
+the set of intervals in $B$ that end \emph{before} $a_i$ starts (i.e., to the
+``left'' of $a_i$).  Similarly, the elements with indices greater than or equal
+to $first$ in $B_S$ correspond to the set of intervals in $B$ that start
+\emph{after} $a_i$ ends (i.e., to the ``right'' of $a_i$).  From these two
 values, we can directly infer the size of the intersection set
 $\mathcal{I}(B,a_i)$ (i.e., the \emph{count} of intersections in $B$ for $a_i$):
 \vspace{-.75em}
@@ -435,8 +435,8 @@ in the Supplemental Materials.
 		\BlankLine
 		\textbf{Function} \textsc{Counter}$(A,B)$
 		\Begin {
-			$B_S \gets [b_1.start, \dots, b_{|B|}.start]$;
-			$B_E \gets [b_1.end, \dots, b_{|B|}.end]$;
+			$B_S \gets [b_1.start, \dots, b_{|B|}.start]$\;
+			$B_E \gets [b_1.end, \dots, b_{|B|}.end]$\;
 			\textsc{Sort}($B_S$)\;
 			\textsc{Sort}($B_E$)\;
 			$c \gets 0$\;
@@ -1042,7 +1042,7 @@ insights into genome biology. This analysis presented a tremendous
 computational burden made feasible by the facility with which
 the BITS algorithm could be applied to GPU architectures. Indeed, each
 iteration of our Monte Carlo simulation tested for
-intersections among 4,425,582,168 intervals among the 25,281 datasets,
+intersections among 4 billion intervals among the 25 thousand datasets,
 yielding over 44 trillion comparisons for the entire simulation. Whereas
 this simulation took just over 6 days (9,069 minutes) on a single
 computer with one GPU card, we estimate that it would take at least 
@@ -1066,7 +1066,7 @@ and K562 in red.  Annotation tracks from the UCSC Genome Browser are in black.}
 % CONCLUSION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\vspace{-2em}
 \section{Conclusion}
 We have developed a novel algorithm for interval intersection that
 is uniquely suited to scalable computing architectures such as GPUs.

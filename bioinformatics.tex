@@ -1085,10 +1085,12 @@ count by excluding intervals that \emph{cannot} intersect one another.
 We have demonstrated that a sequential implementation of BITS outperforms 
 existing tools and illustrate that, because it is based on binary searches
 (which have predictable complexity), BITS is task efficient and is thus highly 
-parallelizable. As such, we show that a GPU implementation of BITS (BITS-CUDA)
-is a superior solution for Monte Carlo analyses of statistical relationships 
-between sets of genome intervals, since observed intersections among many sets 
-must be compared to thousands of randomized simulations.
+parallelizable. \textcolor{red}{BITS is also memory efficient: our 
+Monte Carlo (MC) simulation required at most 217Mb of RAM and the sequential 
+implementation consumed at most 412Mb of RAM, versus 790Mb for UCSC and 
+3,588Mb for BEDTools. We show that a GPU implementation 
+of BITS is therefore a superior solution for MC analyses 
+of statistical relationships between sets of genome intervals.}
 % Using a GPU implementation of BITS,
 % we highlighted the data mining potential of our approach by 
 % exploring relationships among 161 genome annotations and assays of 

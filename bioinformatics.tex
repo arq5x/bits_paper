@@ -84,7 +84,8 @@ experiments are now routine. Consequently, most genomics labs now conduct
 analyses including datasets with billions of genome intervals.
 Experiments of this size require substantial computation time per pair-wise
 comparison; moreover, typical analyses require comparisons to many large sets of
-genomic features. Existing approaches scale poorly and
+genomic features \textcolor{red} {(where set size refers to the number 
+of intervals in the set)}. Existing approaches scale poorly and
 are already reaching their performance limits. We therefore argue
 the need for new scalable algorithms to allow discovery to keep pace with the
 scale and complexity of modern datasets.
@@ -308,7 +309,7 @@ We now introduce our new Binary Interval Search (BITS) algorithm for solving the
 interval set intersection problem.  This algorithm uses binary searches to
 identify interval intersections while avoiding the complexities
 caused by contained intervals. The key observation underlying BITS 
-is that the \emph{size} of the intersection between two sets can be determined
+is that the \emph{size} of the intersection between two sets can be determined 
 without enumerating each intersection.  For each interval in the query set, two
 binary searches are performed to determine the number of intervals in the
 database that intersect the query interval.  Each pair of searches is
@@ -360,8 +361,8 @@ problems.  The size of $\mathcal{I}(B,a_i)$ also serves as the termination condi
 	\BlankLine
 	\textbf{Function} \textsc{ICount}$(B_S,B_E,a)$
 	\Begin {
-		$first \gets \textsc{BSearch}(B_S, a.end)$\;
-		$last \gets \textsc{BSearch}(B_E, a.start)$\;
+		$first \gets \textsc{\textcolor{red}{BinarySearch}}(B_S, a.end)$\;
+		$last \gets \textsc{\textcolor{red}{BinarySearch}}(B_E, a.start)$\;
 		$c \gets first - last$ 
 		\tcc*[f]{$=|B|-(last+(|B|-first))$}
 
@@ -887,7 +888,7 @@ faster than BITS-SEQ and 3,414x faster than sequential UCSC.
 	\begin{tabular}{l l c c c c}
 	\multicolumn{2}{c}{} & \multicolumn{4}{c}{Number of MC iterations} \\
 	\cline{3-6}
-	Size & Tool & 1 & 100 & 1000 & 10000 \\
+	Size & Tool & 1 & 100 & 1000 & \textcolor{red}{10000} \\
 	\hline
 	1e5 & BITS-CUDA & 0.73 & 1  & 4   & 28 \\
 		& BITS-SEQ  & 0.41 & 7  & 68  & 680 \\

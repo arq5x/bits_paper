@@ -306,9 +306,10 @@ typical in genomic datasets, a naive binary search solution is inviable.
 
 \subsection{Binary Interval Search (BITS) Algorithm}
 We now introduce our new Binary Interval Search (BITS) algorithm for solving the
-interval set intersection problem.  This algorithm uses binary searches to
-identify interval intersections while avoiding the complexities
-caused by contained intervals. The key observation underlying BITS 
+interval set intersection problem.  This algorithm uses \textcolor{red}{two} 
+binary searches to identify interval intersections while avoiding the 
+\textcolor{red}{aforementioned} complexities caused by contained intervals. 
+The key observation underlying BITS 
 is that the \emph{size} of the intersection between two sets can be determined 
 without enumerating each intersection.  For each interval in the query set, two
 binary searches are performed to determine the number of intervals in the

@@ -92,13 +92,19 @@ scale and complexity of modern datasets.
 
 In this manuscript, we introduce the Binary Interval Search (BITS) algorithm as
 a novel and scalable solution to the fundamental problem of counting the number
-of intersections between two sets of genomic intervals.  BITS uses two binary searches (one each for start and end coordinates) to identify intersecting intervals. As such, our algorithm executes
+of intersections between two sets of genomic intervals.  BITS uses two binary 
+searches (one each for start and end coordinates) to identify intersecting 
+intervals. As such, our algorithm executes
 in $\Theta(N \log N)$ time, where $N$ is the number of intervals, which can be
 shown to be optimal for the interval intersection counting problem by a
 straight-forward reduction to element uniqueness (known to be
-$\Theta(N\log N)$~\citep{misra1982}).  We illustrate that a sequential version 
-of BITS outperforms existing approaches. We also demonstrate that BITS 
-is intrinsically suited to parallel architectures. The parallel 
+$\Theta(N\log N)$~\citep{misra1982}).  \textcolor{red}{In contrast, counting 
+intersections by enumeration is less efficient, as enumerating intervals 
+requires time $\Theta(M + N \log N)$, where $M$ is the number of intersections 
+which can be quadratic to the input size.
+We illustrate that a sequential version 
+of BITS outperforms existing approaches and show that BITS 
+is intrinsically suited to parallel architectures.} The parallel 
 version performs the same amount of work as the sequential version 
 (i.e., there is no overhead) which means the algorithm is work-efficient, and 
 because each parallel thread performs equivalent work, BITS has little thread 

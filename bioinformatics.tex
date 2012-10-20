@@ -65,6 +65,7 @@ relationships between sets of genomic intervals.
 \section{Contact:} arq5x@virginia.edu
 \end{abstract}
 
+\vspace{-.75em}
 \section{Introduction}
 Searching for intersecting intervals in multiple sets of genomic features is
 crucial to nearly all genomic analyses. For example, interval intersection is
@@ -250,6 +251,7 @@ within the input space, and there is no communication between threads.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % METHODS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-.75em}
 \section{Methods}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1017,12 +1019,13 @@ faster than BITS-SEQ and 3,414x faster than sequential UCSC.
 \vspace{-2em}
 \subsection{Uncovering novel genomic relationships.}
 \label{hm:section}
-The efficiency of BITS for Monte Carlo applications on GPU architectures
-provides a scalable platform for identifying novel relationships between
+The efficiency of BITS for Monte Carlo (MC) applications on
+GPU architectures provides a scalable platform for identifying novel
+relationships between
 large scale genomic datasets. To illustrate BITS-CUDA's potential
 for large-scale data mining experiments, 
 we conducted a screen for significant genomic co-localization among
-159 genome annotation tracks using Monte Carlo simulation (see
+159 genome annotation tracks using \textcolor{red}{MC} simulation (see
 Supplemental Materials). This analysis was based upon functional annotations 
 from the ENCODE project~\citep{encode2007} for the GM12878, H1-hESC, and K562 
 cell lines, including assays for 24 transcriptions factors 
@@ -1033,7 +1036,7 @@ genes, and conserved regions).
 
 Using BITS-CUDA, we measured the log2 ratio of the observed and expected number
 of intersections for each of the 25,281 (i.e., 159*159) pairwise 
-dataset relationships using 1e4 Monte Carlo simulations (Figure 3).
+dataset relationships using 1e4 \textcolor{red}{MC} simulations (Figure 3).
 As expected, this analysis revealed that 1) the genomic locations 
 for the same functional element are largely consistent across 
 replicates and cell types, 2) methylated and semi-methylated regions
@@ -1046,7 +1049,7 @@ transcription factors (TF) assays suggests that a subset of TF
 binding sites are shared among all factors. This observation is 
 consistent with previous descriptions of ``hot regions''
 ~\citep{gerstein2010}. In addition, there is a significant, 
-specific, and unexplained enrichment among the Six5 transcription factor
+specific, and unexplained enrichment among the Six5 \textcolor{red}{TF} 
 and segmental duplications. 
 
 Pursuing the biology of these relationships is beyond the 
@@ -1055,13 +1058,13 @@ to efficiently conduct such large-scale screens facilitates novel
 insights into genome biology. This analysis presented a tremendous
 computational burden made feasible by the facility with which
 the BITS algorithm could be applied to GPU architectures. Indeed, each
-iteration of our Monte Carlo simulation tested for
+iteration of our \textcolor{red}{MC} simulation tested for
 intersections among 4 billion intervals among the 25 thousand datasets,
 yielding over 44 trillion comparisons for the entire simulation. Whereas
-this simulation took just over 6 days (9,069 minutes) on a single
+this simulation took 9,069 minutes on a single
 computer with one GPU card, we estimate that it would take at least 
 112 traditional processors to conduct the same analysis using 
-traditional approaches such as the UCSC tools or BEDTools.
+\textcolor{red}{standard} approaches such as the UCSC tools or BEDTools.
 
 \begin{figure*}[btp]
         \includegraphics[width=7in,height=7in]{heatmap_matrix_nolabels_10000iterations.eps}
@@ -1082,38 +1085,42 @@ and K562 in red.  Annotation tracks from the UCSC Genome Browser are in black.}
 
 \vspace{-2em}
 \section{Conclusion}
-We have developed a novel algorithm for interval intersection that
+\textcolor{red}{We have developed a novel algorithm for interval intersection that
 is uniquely suited to scalable computing architectures such as GPUs.
 Our algorithm takes a new approach to counting intersections: 
-unlike existing methods that must enumerate \textcolor{red}{intersections}
+unlike existing methods that must enumerate intersections
 in order to derive a count, BITS uses two binary searches to directly infer the 
-count by excluding intervals that \emph{cannot} intersect one another. 
+count by excluding intervals that \emph{cannot} intersect one another.}
 
-We have demonstrated that a sequential implementation of BITS outperforms 
-existing tools and illustrate that, because it is based on binary searches
-(which have predictable complexity), BITS is task efficient and is thus highly 
-parallelizable. \textcolor{red}{BITS is also memory efficient: our 
-Monte Carlo (MC) simulation required at most 217Mb of RAM and the sequential 
-implementation consumed at most 412Mb of RAM, versus 790Mb for UCSC and 
+\textcolor{red}{We have demonstrated that a sequential implementation 
+of BITS outperforms existing tools and illustrated that 
+%, because it is based on binary searches
+%(which have predictable complexity),
+BITS is task efficient and highly 
+parallelizable. BITS is also memory efficient: our 
+MC simulation required 217Mb of RAM and the sequential 
+implementation consumed 412Mb of RAM, versus 790Mb for UCSC and 
 3,588Mb for BEDTools. We show that a GPU implementation 
 of BITS is therefore a superior solution for MC analyses 
-of statistical relationships between sets of genome intervals.}
+of statistical relationships between genome intervals sets.}
 % Using a GPU implementation of BITS,
 % we highlighted the data mining potential of our approach by 
 % exploring relationships among 161 genome annotations and assays of 
 % functional elements from the ENCODE project.
 
-Given the efficiency with which the BITS algorithm counts intersections,
-it is also perfectly suited to many fundamental genomic analyses
+\textcolor{red}{Given the efficiency with which the BITS algorithm counts 
+intersections, it is also well suited to other genomic analyses
 including RNA-seq transcript quantification, ChIP-seq peak detection, and 
 searches for copy-number and structural variation. Moreover, the 
 functional and regulatory data produced by projects such as ENCODE
-have driven the development of new approaches~\citep{favorov2012} 
-to measuring relationships among genomic features in order to reveal yet 
-undetected insights into genome biology. We recognize the importance of 
+have led to new approaches~\citep{favorov2012} 
+for measuring relationships among genomic features.
+% in order to reveal yet undetected insights into genome biology.
+We recognize the importance of 
 scalable approaches to detecting such relationships and anticipate that 
 our new algorithm will foster new genome mining tools for the 
-genomics community.
+genomics community.}
+
 \vspace{-2em}
 \section*{ACKNOWLEDGEMENTS}
 We are grateful to Anindya Dutta for helpful discussions throughout the

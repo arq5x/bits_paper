@@ -56,7 +56,7 @@ scalable approach to interval set intersection. We
 demonstrate that BITS outperforms existing methods at counting interval 
 intersections. Moreover, we show that BITS is intrinsically suited to parallel 
 computing architectures such as Graphics Processing Units (GPUs) by illustrating 
-its utility for efficient Monte-Carlo simulations measuring the significance of 
+its utility for efficient Monte Carlo \textcolor{red}{(MC)} simulations measuring the significance of 
 relationships between sets of genomic intervals.
 
 \section{Availability:}
@@ -84,7 +84,7 @@ and whole-exome and whole-genome
 experiments are now routine. Consequently, most genomics labs now conduct
 analyses including datasets with billions of genome intervals.
 Experiments of this size require substantial computation time per pair-wise
-comparison; moreover, typical analyses require comparisons to many large sets of
+comparison\textcolor{red}{. Moreover}, typical analyses require comparisons to many large sets of
 genomic features \textcolor{red} {(where set size refers to the number 
 of intervals in the set)}. Existing approaches scale poorly and
 are already reaching their performance limits. We therefore argue
@@ -109,7 +109,7 @@ is intrinsically suited to parallel architectures.} The parallel
 version performs the same amount of work as the sequential version 
 (i.e., there is no overhead) which means the algorithm is work-efficient, and 
 because each parallel thread performs equivalent work, BITS has little thread 
-divergence. While thread divergence degrades performance on any architecture 
+divergence. \textcolor{red}{Although} thread divergence degrades performance on any architecture 
 (finished threads must wait for over-burdened threads to complete),
 the impact is particularity acute for GPUs where threads share a program counter
 and any divergent instruction must be executed on every thread.
@@ -156,15 +156,15 @@ included in $\mathcal{I}(A,B)$.
 % points are located on the same line, and each segment belongs to one of two
 % sets. 
 There are four natural sub-problems for interval set intersection: 1) 
-\emph{decision} - does there exist at least one 
-interval in $A$ that intersects an interval in $B$?; 2) {\em counting} - how 
+\emph{decision} --- does there exist at least one 
+interval in $A$ that intersects an interval in $B$?; 2) {\em counting} --- how 
 many total intersections exist between sets $A$ and $B$?; 3) {\em 
-per-interval counting} - how many intervals in $B$ intersect each interval in 
-$A$?; 4) {\em enumeration} - what is the set of each pair-wise interval 
+per-interval counting} --- how many intervals in $B$ intersect each interval in 
+$A$?; 4) {\em enumeration} --- what is the set of each pair-wise interval 
 intersections between $A$ an $B$? While BITS solves all 
 four sub-problems, it is designed to efficiently \emph{count} the number of 
 intersections between two sets, and as such, it excels at the \emph{decision}, 
-\emph{counting}, and\emph{per-interval counting} problems.
+\emph{counting}, and \emph{per-interval counting} problems.
 
 % \begin{enumerate}
 %   \item The {\em decision problem}
@@ -190,14 +190,15 @@ intersections between two sets, and as such, it excels at the \emph{decision},
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Limits to parallelization}
 
-Interval intersection has many applications in genomics, and as such, several
+Interval intersection has many applications in genomics, \textcolor{red} {and
+several}
 algorithms have been developed that, in general, are either based on
 trees~\citep{kent2002,alekseyenko2007}, or linear sweeps of
 pre-sorted intervals~\citep{richardson2006}.
 
 The UCSC genome browser introduced a widely-used scheme based on
 R-trees. This approach partitions intervals from one dataset into
-hierarchical ``bins''.  Intervals from a second dataset are then compared 
+hierarchical \textcolor{red} {``bins.''}  Intervals from a second dataset are then compared 
 to matching bins (not the entire dataset) to narrow the search
 for intersections to a focused portion of the genome.  While this 
 approach is used by the UCSC Genome Browser, BEDTools~\citep{quinlan2010},
@@ -236,7 +237,7 @@ must either partition the input space such that each section can be swept in
 parallel without violating the invariant, or threads must communicate 
 about intervals that span partitions.  In the first case parallelism is limited
 to the number of partitions that can be created, and threads can diverge when 
-the number of intervals in each partition are unbalanced.  In the second case,
+the number of intervals in each partition \textcolor{red}{is} unbalanced.  In the second case,
 the communication overhead between threads prevents work efficiency and can 
 have significant performance implications.  In BITS, the amount of parallelism
 depends only on the number of intervals and not the distribution of intervals
@@ -834,10 +835,11 @@ intervals is fundamental to genomic research. However, owing to our complex
 evolutionary history, different classes of genomic features have distinct
 genomic distributions, and as such, testing for significance can be challenging. 
 One widely-used, yet computationally intensive alternative solution is the 
-use of Monte Carlo simulations that compare \emph{observed} interval 
+use of \textcolor{red}{MC} simulations that compare \emph{observed} interval 
 relationships to an \emph{expectation} based on randomization. 
-All aspects of the BITS algorithm are particularly well suited for Monte Carlo
-(MC) simulations measuring relationships between interval sets. As described,
+All aspects of the BITS algorithm are particularly well suited for
+\textcolor{red}{MC} 
+simulations measuring relationships between interval sets. As described,
 all intersection algorithms begin detecting intersections between two interval
 sets by setting up their underlying data structures (e.g., trees or arrays). The 
 BITS setup process
@@ -863,7 +865,7 @@ with no change in execution time.
 This speedup in BITS is extended on parallel platforms, where the independence
 of each intersection is combined with efficient parallel random number
 generation algorithms ~\citep{tzeng2008} and parallel sorting
-algorithms~\citep{merrill2011,satish2009}.  Monte Carlo simulations have obvious
+algorithms~\citep{merrill2011,satish2009}.  \textcolor{red}{MC} simulations have obvious
 task parallelism since each round is independent.  BITS running on CUDA 
 ("BITS-CUDA") goes a step further and exposes fine-grain parallelism in both the 
 setup step, with
@@ -877,12 +879,13 @@ faster than sequential BITS and 3,414x faster than sequential UCSC.  An
 improvement of this scale allows MC analyses for thousands of experiments 
 (e.g., 25,281 pairwise comparisons in Section~\ref{hm:section}).
 
-We demonstrate the improved performance of BITS over UCSC for Monte Carlo
+We demonstrate the improved performance of BITS over UCSC for
+\textcolor{red}{MC} 
 simulations for measuring the significance of the overlaps between interval sets
 in Table~\ref{table:avge}.  As both the number of MC rounds and the size of
 the dataset grows, the speedup of both sequential BITS and BITS-CUDA increases
 over UCSC.  For the largest comparison (1e7 intervals and 10,000 iterations),
-BITS-SEQ is 12x faster that UCSD, and BITS-CUDA is 267x
+BITS-SEQ is 12x faster \textcolor{red}{than} UCSD, and BITS-CUDA is 267x
 faster than BITS-SEQ and 3,414x faster than sequential UCSC.
 
 % NOTE: moved to figure legend
@@ -892,7 +895,7 @@ faster than BITS-SEQ and 3,414x faster than sequential UCSC.
 
 \begin{center}
 	\begin{table}[h!b!p!]
-	\caption{Runtime (seconds) comparison for Monte Carlo simulations. 
+	\caption{Runtime (seconds) comparison for \textcolor{red}{MC} simulations. 
 	Timings in italics were extrapolated owing to long run times.}
 	\begin{tabular}{l l c c c c}
 	\multicolumn{2}{c}{} & \multicolumn{4}{c}{Number of MC iterations} \\
@@ -1019,7 +1022,7 @@ faster than BITS-SEQ and 3,414x faster than sequential UCSC.
 \vspace{-2em}
 \subsection{Uncovering novel genomic relationships.}
 \label{hm:section}
-The efficiency of BITS for Monte Carlo (MC) applications on
+The efficiency of BITS for MC applications on
 GPU architectures provides a scalable platform for identifying novel
 relationships between
 large scale genomic datasets. To illustrate BITS-CUDA's potential
